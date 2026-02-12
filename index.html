@@ -278,7 +278,7 @@
             border-radius: 16px;
             padding: 2.5rem 3rem;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             max-width: 1100px;
             margin: -2rem auto 0;
@@ -410,6 +410,20 @@
             margin-bottom: 0.4rem;
         }
 
+        .timeline-subrole {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-subrole:first-child {
+            margin-top: 0;
+        }
+
         .timeline-tags {
             display: flex;
             flex-wrap: wrap;
@@ -503,6 +517,13 @@
             margin-bottom: 0.25rem;
         }
 
+        .edu-specialization {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 0.35rem;
+        }
+
         .edu-school {
             font-size: 0.95rem;
             color: var(--accent);
@@ -510,35 +531,109 @@
             margin-bottom: 0.25rem;
         }
 
+        .edu-school a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .edu-school a:hover {
+            color: #1a6ad4;
+            text-decoration: underline;
+        }
+
         .edu-year {
             font-size: 0.85rem;
             color: var(--text-light);
         }
 
-        /* Speaking & Leadership */
-        .highlights-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+        /* Portfolio */
+        .portfolio-section {
+            background: var(--white);
         }
 
-        .highlight-card {
-            background: var(--white);
+        .portfolio-card {
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 2rem;
+            background: var(--bg);
+            transition: all 0.3s;
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .portfolio-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .portfolio-card h3 a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .portfolio-card h3 a:hover {
+            color: var(--accent);
+        }
+
+        .portfolio-url {
+            font-size: 0.88rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .portfolio-url a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .portfolio-url a:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* Interests */
+        .interests-section {
+            background: var(--bg);
+        }
+
+        .interest-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            background: var(--white);
             display: flex;
             gap: 1.25rem;
             align-items: flex-start;
             transition: all 0.3s;
         }
 
-        .highlight-card:hover {
+        .interest-card:hover {
             border-color: var(--accent);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
         }
 
-        .highlight-icon {
+        .interest-icon {
             width: 48px;
             height: 48px;
             border-radius: 10px;
@@ -550,17 +645,17 @@
             flex-shrink: 0;
         }
 
-        .highlight-card h3 {
-            font-size: 1rem;
+        .interest-card h3 {
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
         }
 
-        .highlight-card p {
-            font-size: 0.88rem;
+        .interest-card p {
+            font-size: 0.92rem;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.75;
         }
 
         /* Contact */
@@ -577,23 +672,22 @@
             background: var(--accent);
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+        .contact-content {
+            max-width: 700px;
         }
 
-        .contact-info p {
+        .contact-content > p {
             color: rgba(255,255,255,0.75);
             line-height: 1.8;
             font-size: 1.05rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .contact-links {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .contact-link {
@@ -621,56 +715,26 @@
             font-size: 1.1rem;
         }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 0.85rem 1rem;
-            color: white;
-            font-size: 0.95rem;
-            font-family: inherit;
-            transition: border-color 0.2s;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255,255,255,0.4);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .btn-send {
-            align-self: flex-start;
+        .btn-topmate {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
             background: var(--accent);
             color: white;
             border: none;
-            padding: 0.85rem 2rem;
             border-radius: 8px;
             font-size: 0.95rem;
             font-weight: 600;
+            text-decoration: none;
             cursor: pointer;
             transition: all 0.2s;
         }
 
-        .btn-send:hover {
+        .btn-topmate:hover {
             background: #1a6ad4;
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44,123,229,0.35);
         }
 
         /* Footer */
@@ -754,7 +818,7 @@
             }
 
             .stats-bar {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
                 padding: 1.5rem;
                 margin: -1rem 1rem 0;
             }
@@ -788,12 +852,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .highlights-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
+            .interest-card {
+                flex-direction: column;
             }
 
             .timeline-header {
@@ -803,7 +863,7 @@
 
         /* Print Styles */
         @media print {
-            nav, .contact-form, .btn { display: none; }
+            nav, .btn { display: none; }
             section { padding: 2rem 0; }
             .hero { padding-top: 2rem; }
         }
@@ -832,7 +892,8 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#highlights">Leadership</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#interests">Interests</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -845,7 +906,7 @@
     <section class="hero" id="about">
         <div class="hero-text">
             <h1>Abhishek Gupta</h1>
-            <div class="subtitle">Product Leader &middot; Expedia Group</div>
+            <div class="subtitle">Product Leader</div>
             <p class="summary">
                 Dynamic and vision-driven Product Leader with extensive experience spearheading digital transformation in e-commerce and travel technology. Proven track record of building and scaling products at global companies including Expedia Group and Google, driving business growth through data-informed strategy and customer-centric innovation.
             </p>
@@ -879,12 +940,8 @@
             <div class="stat-label">Fortune 500 Companies</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">LinkedIn Connections</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">2K+</div>
-            <div class="stat-label">Followers</div>
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years of Product Experience</div>
         </div>
     </div>
 
@@ -900,27 +957,47 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <div class="timeline-role">Product Leader</div>
-                        <div class="timeline-date">Present</div>
+                        <div class="timeline-role">Product Leader (Various Roles)</div>
+                        <div class="timeline-date">Apr 2017 &ndash; Present</div>
                     </div>
                     <div class="timeline-company">
                         <span class="company-logo logo-expedia">E</span>
                         Expedia Group &middot; Gurugram, India
                     </div>
                     <div class="timeline-desc">
+                        <div class="timeline-subrole">Expedia Flights &ndash; Reimagining experience, onboarding ancillaries, craftsmanship &amp; growth</div>
                         <ul>
-                            <li>Leading product strategy and execution for key e-commerce verticals within Expedia's global travel marketplace</li>
-                            <li>Driving digital transformation initiatives across the platform, optimizing user experience for millions of travellers worldwide</li>
-                            <li>Collaborating cross-functionally with engineering, design, data science, and business teams to deliver high-impact product roadmaps</li>
-                            <li>Spearheading data-driven experimentation and personalization to increase conversion and customer engagement</li>
+                            <li>Product strategy for 0-to-1 product offerings like flights loyalty/member-only deals, post-booking ancillary sales &amp; ancillary monetization</li>
+                            <li>Creation of annual strategic plan &amp; execution with objective of 5x growth (from 2% to 10% of total business)</li>
+                            <li>Product owner for ancillary merchandising (free &amp; paid seats/bags/branded fares) &mdash; improved ancillary selection experience resulting in 5% increase in unit profit, exceeding target by 66%</li>
+                            <li>Reimagined flight upsell experience focused on incremental price &amp; value prop, drove gross profit by +1%</li>
+                            <li>Product craftsmanship &amp; shopping experience redesign &mdash; mobile CVR increased by 1.5% &amp; funnel progression by 43%</li>
+                            <li>Managed SEO &amp; SEM landing pages contributing to ~7% of total flight transactions with 25%+ YoY growth</li>
+                        </ul>
+
+                        <div class="timeline-subrole">Expedia Activities &ndash; Revamping shopping &amp; attach experiences</div>
+                        <ul>
+                            <li>Product lead for Activities/Things to Do line of business with focus on delivering AI-led experiences</li>
+                            <li>Delivered AI-driven experiences including LLM-generated FAQs and AI-generated image-to-immersive video montage, resulting in significant increase in engagement and return visits</li>
+                            <li>Implemented cross-sell placements across the shopping funnel, leading to 11bps increase in attach</li>
+                            <li>Formulated comprehensive product strategy plan for 2026 focused on AI-led shopping and itinerary curation</li>
+                        </ul>
+
+                        <div class="timeline-subrole">Expedia Rails &ndash; Expansion &amp; Growth</div>
+                        <ul>
+                            <li>End-to-end development of shopping, booking &amp; post-booking experience for 4 rail supplies (National Rail UK, Deutsche Bahn Germany, Trenitalia Italy, Renfe Spain) across 5 EMEA point of sales (~$70B rail market)</li>
+                            <li>Led product expansion from 1 rail supply &times; POS combo to 10+ combinations with 20x transaction growth</li>
                         </ul>
                     </div>
                     <div class="timeline-tags">
                         <span class="tag">Product Strategy</span>
                         <span class="tag">E-Commerce</span>
                         <span class="tag">Travel Tech</span>
+                        <span class="tag">AI/LLM</span>
                         <span class="tag">Personalization</span>
                         <span class="tag">A/B Testing</span>
+                        <span class="tag">Ancillary Revenue</span>
+                        <span class="tag">Cross-sell</span>
                     </div>
                 </div>
 
@@ -928,51 +1005,73 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <div class="timeline-role">Product Manager</div>
-                        <div class="timeline-date">Previous</div>
+                        <div class="timeline-role">Campaign Manager (US Entertainment Industry)</div>
+                        <div class="timeline-date">Oct 2012 &ndash; Apr 2016</div>
                     </div>
                     <div class="timeline-company">
                         <span class="company-logo logo-google">G</span>
-                        Google
+                        Google (Alphabet Inc.)
                     </div>
                     <div class="timeline-desc">
+                        <div class="timeline-subrole">Account Management &ndash; Pre &amp; Post Sales</div>
                         <ul>
-                            <li>Managed product lifecycle for consumer-facing products, driving adoption and engagement at scale</li>
-                            <li>Partnered with world-class engineering teams to define product requirements, prioritize backlogs, and ship iteratively</li>
-                            <li>Leveraged analytics and user research to inform product decisions and measure success against OKRs</li>
-                            <li>Contributed to Google's culture of innovation through rapid prototyping and experimentation</li>
+                            <li>End-to-end account management &amp; optimization of ~$25M portfolio of clients like Yahoo, Warner Bros, EA, Sony PlayStation</li>
+                            <li>Single-handedly managed 10+ customers with 25+ digital marketing accounts having 100+ running campaigns</li>
+                            <li>Built pre-sales digital marketing and post-sales implementation strategy for Google's top 10+ priority US Ticketing, Publishing &amp; Gaming clients with quarterly revenue target of ~$25M&ndash;$30M</li>
+                            <li>Designed launch strategies for top 10 games and top gaming consoles accounting for ~$50M+ revenue</li>
+                        </ul>
+
+                        <div class="timeline-subrole">Program Management &amp; Leadership</div>
+                        <ul>
+                            <li>Part of the team that set up vendor operations for Google India catering to 400+ team touching $10B revenues</li>
+                            <li>Conceptualized &amp; drove vendor utilization project across 30 teams, increasing outsourcing from ~40% to ~80%</li>
+                            <li>Mentored &amp; trained 3 new Googlers, evaluated 15+ new joiners</li>
+                        </ul>
+
+                        <div class="timeline-subrole">Key Recognitions</div>
+                        <ul>
+                            <li>Won Gold Award for a pitch for a major Gaming Hardware client leading to $1M+ contract</li>
+                            <li>Awarded Management Spot Bonus &amp; 14 Peer Bonuses for delivering on multiple projects</li>
+                            <li>Conceptualized &lsquo;Image Extensions&rsquo; Impact Analysis Tool recognized by global product management team</li>
                         </ul>
                     </div>
                     <div class="timeline-tags">
-                        <span class="tag">Consumer Products</span>
-                        <span class="tag">OKRs</span>
-                        <span class="tag">User Research</span>
-                        <span class="tag">Rapid Prototyping</span>
+                        <span class="tag">Digital Advertising</span>
+                        <span class="tag">Account Management</span>
+                        <span class="tag">Search/Display/YouTube</span>
+                        <span class="tag">Program Management</span>
+                        <span class="tag">Vendor Operations</span>
                     </div>
                 </div>
 
-                <!-- Earlier roles -->
+                <!-- Earlier Career -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <div class="timeline-role">Senior Product &amp; Strategy Roles</div>
-                        <div class="timeline-date">Earlier Career</div>
+                        <div class="timeline-role">Associate Product Manager &rarr; Systems Engineer</div>
+                        <div class="timeline-date">Jun 2010 &ndash; Oct 2012</div>
                     </div>
                     <div class="timeline-company">
                         <span class="company-logo logo-default">+</span>
-                        Multiple Organizations &middot; New Delhi, Pune, Gurugram
+                        Earlier Career
                     </div>
                     <div class="timeline-desc">
+                        <div class="timeline-subrole">Boston Strategies International (Nov 2011 &ndash; Oct 2012)</div>
                         <ul>
-                            <li>Built foundational expertise in product management, consulting, and digital strategy across diverse industries</li>
-                            <li>Developed strong skills in stakeholder management, market analysis, and go-to-market execution</li>
-                            <li>Led cross-functional teams in delivering technology solutions for complex business challenges</li>
+                            <li>Associate Product Manager &mdash; Market analysis using secondary research for $200B+ Oil Company; part of a team that brought in 50%+ of revenues</li>
+                            <li>Developed features for internal sales product to facilitate sales management with 50+ suppliers globally</li>
+                        </ul>
+
+                        <div class="timeline-subrole">Infosys (Jun 2010 &ndash; Nov 2011)</div>
+                        <ul>
+                            <li>Systems Engineer &mdash; Worked on PeopleSoft HRMS implementation project for a major Fortune 500 client</li>
                         </ul>
                     </div>
                     <div class="timeline-tags">
                         <span class="tag">Consulting</span>
-                        <span class="tag">Digital Strategy</span>
-                        <span class="tag">GTM Execution</span>
+                        <span class="tag">Market Analysis</span>
+                        <span class="tag">Product Development</span>
+                        <span class="tag">Enterprise Software</span>
                     </div>
                 </div>
             </div>
@@ -1043,13 +1142,15 @@
             <div class="edu-grid fade-in">
                 <div class="edu-card">
                     <div class="edu-degree">Post Graduate Programme in Management</div>
-                    <div class="edu-school">Indian School of Business (ISB)</div>
+                    <div class="edu-specialization">Majors &ndash; Marketing, Strategy &amp; Leadership</div>
+                    <div class="edu-school"><a href="https://www.isb.edu" target="_blank">Indian School of Business (ISB)</a></div>
                     <div class="edu-year">2016 &ndash; 2017</div>
                 </div>
                 <div class="edu-card">
-                    <div class="edu-degree">Bachelor's Degree</div>
-                    <div class="edu-school">Engineering &amp; Technology</div>
-                    <div class="edu-year">2005 &ndash; 2010</div>
+                    <div class="edu-degree">Bachelors of Engineering</div>
+                    <div class="edu-specialization">Information Technology</div>
+                    <div class="edu-school"><a href="https://uiet.puchd.ac.in" target="_blank">University Institute of Engineering &amp; Technology, Panjab University</a></div>
+                    <div class="edu-year">2006 &ndash; 2010</div>
                 </div>
             </div>
             <div class="languages fade-in" style="margin-top: 2.5rem;">
@@ -1090,48 +1191,45 @@
         </div>
     </section>
 
-    <!-- Leadership & Speaking -->
-    <section id="highlights">
+    <!-- Product Portfolio -->
+    <section class="portfolio-section" id="portfolio">
         <div class="section-inner">
             <div class="section-header fade-in">
-                <h2>Leadership &amp; Speaking</h2>
+                <h2>Product Portfolio</h2>
                 <div class="line"></div>
             </div>
-            <div class="highlights-grid fade-in">
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                    </div>
-                    <div>
-                        <h3>XLRI Aurora 3.0 Panelist</h3>
-                        <p>Speaker at XLRI Aurora 3.0 panel discussing product strategy in volatile markets and navigating uncertainty in tech.</p>
-                    </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                    </div>
-                    <div>
-                        <h3>Mentorship &amp; Coaching</h3>
-                        <p>Actively mentors aspiring product managers through resume reviews, interview preparation, and career coaching.</p>
+            <div class="fade-in">
+                <div class="portfolio-card">
+                    <h3><a href="https://www.abhishekgupta.cc" target="_blank">Personal Portfolio Website</a></h3>
+                    <div class="portfolio-url"><a href="https://www.abhishekgupta.cc" target="_blank">www.abhishekgupta.cc</a></div>
+                    <p>A modern, responsive personal portfolio website showcasing professional experience, skills, and interests. Built entirely using Claude Code (Anthropic's AI-powered coding tool) for rapid development, version-controlled on GitHub, and deployed via Vercel for seamless CI/CD. Demonstrates the power of AI-assisted development for quick prototyping and shipping production-quality web applications.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Claude Code</span>
+                        <span class="tag">HTML/CSS/JS</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">Vercel</span>
+                        <span class="tag">AI-Assisted Development</span>
                     </div>
                 </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Interests -->
+    <section class="interests-section" id="interests">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Personal Interests</h2>
+                <div class="line"></div>
+            </div>
+            <div class="fade-in">
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
                     </div>
                     <div>
-                        <h3>Community Leadership</h3>
-                        <p>Served as Joint Secretary at Youth United (2008&ndash;2010), driving community initiatives and volunteer engagement.</p>
-                    </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <div>
-                        <h3>Thought Leadership</h3>
-                        <p>Regular contributor to product management discourse with 2,000+ followers engaging with insights on strategy and innovation.</p>
+                        <h3>Credit Card Enthusiast &amp; Points/Miles Strategist</h3>
+                        <p>Passionate about the world of credit card rewards, airline miles, and hotel points. I love helping friends, family, and anyone willing to listen build smart points &amp; miles strategies to maximise the return on their everyday spending. Whether it's picking the right card for your spending pattern, stacking offers, or planning award travel &mdash; I'm always happy to geek out and help you get more value from every swipe. Feel free to reach out if you'd like to chat about optimising your rewards game!</p>
                     </div>
                 </div>
             </div>
@@ -1145,30 +1243,34 @@
                 <h2>Let's Connect</h2>
                 <div class="line"></div>
             </div>
-            <div class="contact-grid fade-in">
-                <div class="contact-info">
-                    <p>I'm always open to discussing product strategy, e-commerce innovation, travel technology, or career mentoring opportunities. Feel free to reach out.</p>
+            <div class="fade-in">
+                <div class="contact-content">
+                    <p>I'm always open to discussing product strategy, e-commerce innovation, travel technology, or career mentoring opportunities. Reach out directly through any of the channels below.</p>
                     <div class="contact-links">
+                        <a href="mailto:guptaabhishek@Outlook.com" class="contact-link">
+                            <div class="contact-link-icon">
+                                <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
+                            </div>
+                            guptaabhishek@Outlook.com
+                        </a>
+                        <a href="tel:+919650086940" class="contact-link">
+                            <div class="contact-link-icon">
+                                <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            </div>
+                            +91 96500 86940
+                        </a>
                         <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" class="contact-link">
                             <div class="contact-link-icon">
                                 <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                             </div>
                             linkedin.com/in/guptaabhishekisb
                         </a>
-                        <a href="mailto:abhishek@example.com" class="contact-link">
-                            <div class="contact-link-icon">
-                                <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
-                            </div>
-                            Gurugram, Haryana, India
-                        </a>
                     </div>
+                    <a href="https://topmate.io/guptaabhishek" target="_blank" class="btn-topmate">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Book a Session on Topmate
+                    </a>
                 </div>
-                <form class="contact-form" onsubmit="handleSubmit(event)">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn-send">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
@@ -1228,19 +1330,6 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Contact form handler
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('.btn-send');
-            btn.textContent = 'Message Sent!';
-            btn.style.background = '#22c55e';
-            setTimeout(() => {
-                btn.textContent = 'Send Message';
-                btn.style.background = '';
-                e.target.reset();
-            }, 2500);
-        }
-
         // Smooth number counting animation for stats
         function animateStats() {
             document.querySelectorAll('.stat-number').forEach(stat => {
@@ -1249,7 +1338,7 @@
                 const hasK = text.includes('K');
                 let target = parseInt(text.replace(/[^0-9]/g, ''));
 
-                if (hasK) target = target; // Keep as-is for display
+                if (hasK) target = target;
                 let current = 0;
                 const increment = Math.ceil(target / 40);
                 const suffix = (hasK ? 'K' : '') + (hasPlus ? '+' : '');
