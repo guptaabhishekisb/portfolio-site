@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Gupta | Product Leader</title>
+    <style>
+        :root {
+            --primary: #1a2a3a;
+            --accent: #2c7be5;
+            --accent-light: #e8f0fe;
+            --text: #2d3748;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: var(--shadow);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .summary {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1a6ad4;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44,123,229,0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+        }
+
+        .avatar-circle {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7rem;
+            color: white;
+            font-weight: 700;
+            letter-spacing: -2px;
+            box-shadow: 0 20px 60px rgba(44,123,229,0.25);
+        }
+
+        .avatar-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 12px;
+            padding: 0.6rem 1rem;
+            box-shadow: var(--shadow-lg);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .avatar-badge .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.75px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .line {
+            width: 48px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Stats */
+        .stats-bar {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: -2rem auto 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Experience */
+        .experience-section {
+            background: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2rem;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        .timeline-item:not(:first-child) .timeline-dot {
+            background: var(--white);
+            box-shadow: 0 0 0 2px var(--border);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-role {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            background: var(--bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .timeline-company {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .timeline-company .company-logo {
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo-expedia { background: #fbcc33; color: #1a1a2e !important; }
+        .logo-google { background: #4285f4; }
+        .logo-default { background: #64748b; }
+
+        .timeline-desc {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .timeline-desc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            font-size: 0.78rem;
+            padding: 0.3rem 0.75rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .skill-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Education */
+        .education-section {
+            background: var(--white);
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .edu-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            background: var(--bg);
+            transition: all 0.3s;
+        }
+
+        .edu-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .edu-degree {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-school {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-year {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Speaking & Leadership */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            transition: all 0.3s;
+        }
+
+        .highlight-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .highlight-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .highlight-card p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-section .section-header h2 {
+            color: white;
+        }
+
+        .contact-section .section-header .line {
+            background: var(--accent);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info p {
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .contact-link:hover {
+            color: white;
+        }
+
+        .contact-link-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            color: white;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-send {
+            align-self: flex-start;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-send:hover {
+            background: #1a6ad4;
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1a26;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+
+        /* Languages bar */
+        .languages {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .lang-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .lang-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .lang-level {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .lang-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .lang-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+
+        .lang-dot.filled {
+            background: var(--accent);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 7rem 1.5rem 3rem;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .avatar-circle {
+                width: 200px;
+                height: 200px;
+                font-size: 4.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 1.5rem;
+                margin: -1rem 1rem 0;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid var(--border);
+                gap: 1rem;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .edu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav, .contact-form, .btn { display: none; }
+            section { padding: 2rem 0; }
+            .hero { padding-top: 2rem; }
+        }
+
+        /* Scroll animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo">AG</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#highlights">Leadership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="about">
+        <div class="hero-text">
+            <h1>Abhishek Gupta</h1>
+            <div class="subtitle">Product Leader &middot; Expedia Group</div>
+            <p class="summary">
+                Dynamic and vision-driven Product Leader with extensive experience spearheading digital transformation in e-commerce and travel technology. Proven track record of building and scaling products at global companies including Expedia Group and Google, driving business growth through data-informed strategy and customer-centric innovation.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
+                    Get in Touch
+                </a>
+                <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" class="btn btn-outline">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn Profile
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="avatar-wrapper">
+                <div class="avatar-circle">AG</div>
+                <div class="avatar-badge"><span class="dot"></span>Open to connect</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-bar fade-in">
+        <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Fortune 500 Companies</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">LinkedIn Connections</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">2K+</div>
+            <div class="stat-label">Followers</div>
+        </div>
+    </div>
+
+    <!-- Experience -->
+    <section class="experience-section" id="experience">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Professional Experience</h2>
+                <div class="line"></div>
+            </div>
+            <div class="timeline fade-in">
+                <!-- Expedia -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div class="timeline-role">Product Leader</div>
+                        <div class="timeline-date">Present</div>
+                    </div>
+                    <div class="timeline-company">
+                        <span class="company-logo logo-expedia">E</span>
+                        Expedia Group &middot; Gurugram, India
+                    </div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Leading product strategy and execution for key e-commerce verticals within Expedia's global travel marketplace</li>
+                            <li>Driving digital transformation initiatives across the platform, optimizing user experience for millions of travellers worldwide</li>
+                            <li>Collaborating cross-functionally with engineering, design, data science, and business teams to deliver high-impact product roadmaps</li>
+                            <li>Spearheading data-driven experimentation and personalization to increase conversion and customer engagement</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Product Strategy</span>
+                        <span class="tag">E-Commerce</span>
+                        <span class="tag">Travel Tech</span>
+                        <span class="tag">Personalization</span>
+                        <span class="tag">A/B Testing</span>
+                    </div>
+                </div>
+
+                <!-- Google -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div class="timeline-role">Product Manager</div>
+                        <div class="timeline-date">Previous</div>
+                    </div>
+                    <div class="timeline-company">
+                        <span class="company-logo logo-google">G</span>
+                        Google
+                    </div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Managed product lifecycle for consumer-facing products, driving adoption and engagement at scale</li>
+                            <li>Partnered with world-class engineering teams to define product requirements, prioritize backlogs, and ship iteratively</li>
+                            <li>Leveraged analytics and user research to inform product decisions and measure success against OKRs</li>
+                            <li>Contributed to Google's culture of innovation through rapid prototyping and experimentation</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Consumer Products</span>
+                        <span class="tag">OKRs</span>
+                        <span class="tag">User Research</span>
+                        <span class="tag">Rapid Prototyping</span>
+                    </div>
+                </div>
+
+                <!-- Earlier roles -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div class="timeline-role">Senior Product &amp; Strategy Roles</div>
+                        <div class="timeline-date">Earlier Career</div>
+                    </div>
+                    <div class="timeline-company">
+                        <span class="company-logo logo-default">+</span>
+                        Multiple Organizations &middot; New Delhi, Pune, Gurugram
+                    </div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Built foundational expertise in product management, consulting, and digital strategy across diverse industries</li>
+                            <li>Developed strong skills in stakeholder management, market analysis, and go-to-market execution</li>
+                            <li>Led cross-functional teams in delivering technology solutions for complex business challenges</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Consulting</span>
+                        <span class="tag">Digital Strategy</span>
+                        <span class="tag">GTM Execution</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Core Competencies</h2>
+                <div class="line"></div>
+            </div>
+            <div class="skills-grid fade-in">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                    </div>
+                    <h3>Product Strategy</h3>
+                    <p>Defining vision, roadmaps, and OKRs that align product development with business goals and market opportunity.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>E-Commerce &amp; Marketplace</h3>
+                    <p>Deep expertise in online marketplace dynamics, conversion optimization, pricing strategy, and customer lifecycle management.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Cross-Functional Leadership</h3>
+                    <p>Leading engineering, design, analytics, and business teams to deliver impactful products through collaboration and alignment.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <h3>Data-Driven Decision Making</h3>
+                    <p>Leveraging analytics, A/B experimentation, and user research to make informed product decisions and measure outcomes.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Digital Transformation</h3>
+                    <p>Driving technology modernization and digital-first experiences to create scalable, high-performance platforms.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
+                    <h3>Travel Technology</h3>
+                    <p>Specialized knowledge in travel industry dynamics, distribution systems, and building best-in-class booking experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="education-section" id="education">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Education</h2>
+                <div class="line"></div>
+            </div>
+            <div class="edu-grid fade-in">
+                <div class="edu-card">
+                    <div class="edu-degree">Post Graduate Programme in Management</div>
+                    <div class="edu-school">Indian School of Business (ISB)</div>
+                    <div class="edu-year">2016 &ndash; 2017</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">Bachelor's Degree</div>
+                    <div class="edu-school">Engineering &amp; Technology</div>
+                    <div class="edu-year">2005 &ndash; 2010</div>
+                </div>
+            </div>
+            <div class="languages fade-in" style="margin-top: 2.5rem;">
+                <div class="lang-item">
+                    <div class="lang-name">English</div>
+                    <div class="lang-dots">
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                    </div>
+                    <div class="lang-level">Professional</div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Hindi</div>
+                    <div class="lang-dots">
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                    </div>
+                    <div class="lang-level">Native</div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Punjabi</div>
+                    <div class="lang-dots">
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot"></div>
+                    </div>
+                    <div class="lang-level">Fluent</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Speaking -->
+    <section id="highlights">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Leadership &amp; Speaking</h2>
+                <div class="line"></div>
+            </div>
+            <div class="highlights-grid fade-in">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    </div>
+                    <div>
+                        <h3>XLRI Aurora 3.0 Panelist</h3>
+                        <p>Speaker at XLRI Aurora 3.0 panel discussing product strategy in volatile markets and navigating uncertainty in tech.</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div>
+                        <h3>Mentorship &amp; Coaching</h3>
+                        <p>Actively mentors aspiring product managers through resume reviews, interview preparation, and career coaching.</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Community Leadership</h3>
+                        <p>Served as Joint Secretary at Youth United (2008&ndash;2010), driving community initiatives and volunteer engagement.</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div>
+                        <h3>Thought Leadership</h3>
+                        <p>Regular contributor to product management discourse with 2,000+ followers engaging with insights on strategy and innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Let's Connect</h2>
+                <div class="line"></div>
+            </div>
+            <div class="contact-grid fade-in">
+                <div class="contact-info">
+                    <p>I'm always open to discussing product strategy, e-commerce innovation, travel technology, or career mentoring opportunities. Feel free to reach out.</p>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" class="contact-link">
+                            <div class="contact-link-icon">
+                                <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </div>
+                            linkedin.com/in/guptaabhishekisb
+                        </a>
+                        <a href="mailto:abhishek@example.com" class="contact-link">
+                            <div class="contact-link-icon">
+                                <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
+                            </div>
+                            Gurugram, Haryana, India
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-send">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Abhishek Gupta. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Contact form handler
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('.btn-send');
+            btn.textContent = 'Message Sent!';
+            btn.style.background = '#22c55e';
+            setTimeout(() => {
+                btn.textContent = 'Send Message';
+                btn.style.background = '';
+                e.target.reset();
+            }, 2500);
+        }
+
+        // Smooth number counting animation for stats
+        function animateStats() {
+            document.querySelectorAll('.stat-number').forEach(stat => {
+                const text = stat.textContent;
+                const hasPlus = text.includes('+');
+                const hasK = text.includes('K');
+                let target = parseInt(text.replace(/[^0-9]/g, ''));
+
+                if (hasK) target = target; // Keep as-is for display
+                let current = 0;
+                const increment = Math.ceil(target / 40);
+                const suffix = (hasK ? 'K' : '') + (hasPlus ? '+' : '');
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = current + suffix;
+                }, 30);
+            });
+        }
+
+        // Trigger stat animation when visible
+        const statsBar = document.querySelector('.stats-bar');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (statsBar) statsObserver.observe(statsBar);
+    </script>
+</body>
+</html>
