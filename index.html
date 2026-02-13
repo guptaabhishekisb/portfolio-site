@@ -1,13 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Gupta | Product Leader</title>
+    <title>Abhishek Gupta | Product Leader — Expedia, Google, ISB</title>
+    <meta name="description" content="Product Leader with 15+ years of experience at Expedia Group and Google. Specializing in e-commerce, travel tech, and AI-driven product development.">
+    <meta name="keywords" content="product manager, product leader, Expedia, Google, ISB, e-commerce, travel tech, AI, digital transformation, Abhishek Gupta">
+    <link rel="canonical" href="https://www.abhishekgupta.cc/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Abhishek Gupta | Product Leader">
+    <meta property="og:description" content="Product Leader with 15+ years of experience at Expedia Group and Google. Specializing in e-commerce, travel tech, and AI-driven product development.">
+    <meta property="og:url" content="https://www.abhishekgupta.cc/">
+    <meta property="og:image" content="https://www.abhishekgupta.cc/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abhishek Gupta | Product Leader">
+    <meta name="twitter:description" content="Product Leader with 15+ years of experience at Expedia Group and Google. Specializing in e-commerce, travel tech, and AI-driven product development.">
+    <meta name="twitter:image" content="https://www.abhishekgupta.cc/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232c7be5'/%3E%3Ctext x='50' y='67' font-family='system-ui,sans-serif' font-size='48' font-weight='700' text-anchor='middle' fill='white'%3EAG%3C/text%3E%3C/svg%3E">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Abhishek Gupta",
+        "jobTitle": "Product Leader",
+        "worksFor": { "@type": "Organization", "name": "Expedia Group" },
+        "alumniOf": [
+            { "@type": "EducationalOrganization", "name": "Indian School of Business" },
+            { "@type": "EducationalOrganization", "name": "University Institute of Engineering & Technology, Panjab University" }
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/guptaabhishekisb/",
+            "https://topmate.io/guptaabhishek"
+        ],
+        "url": "https://www.abhishekgupta.cc"
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+
+    <!-- Vercel Analytics (auto-activates on Vercel deployment) -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
     <style>
+        /* ============================================
+           1. VARIABLES
+           ============================================ */
         :root {
             --primary: #1a2a3a;
             --accent: #2c7be5;
+            --accent-hover: #1a6ad4;
             --accent-light: #e8f0fe;
             --text: #2d3748;
             --text-light: #64748b;
@@ -16,41 +69,134 @@
             --border: #e2e8f0;
             --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
             --shadow-lg: 0 10px 25px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+            --glass-bg: rgba(255,255,255,0.65);
+            --glass-border: rgba(255,255,255,0.35);
+            --nav-bg: rgba(248,250,252,0.85);
+            --contact-bg: #1a2a3a;
+            --footer-bg: #0f1a26;
+            --font-display: 'Clash Display', 'Segoe UI', sans-serif;
+            --font-body: 'Satoshi', Calibri, 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        [data-theme="dark"] {
+            --primary: #f1f5f9;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --accent-light: rgba(59,130,246,0.15);
+            --text: #e2e8f0;
+            --text-light: #94a3b8;
+            --bg: #0f172a;
+            --white: #1e293b;
+            --border: #334155;
+            --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.4), 0 4px 10px rgba(0,0,0,0.2);
+            --glass-bg: rgba(30,41,59,0.65);
+            --glass-border: rgba(255,255,255,0.08);
+            --nav-bg: rgba(15,23,42,0.85);
+            --contact-bg: #0a1929;
+            --footer-bg: #060d17;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        /* ============================================
+           2. RESET & BASE
+           ============================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: Calibri, 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-body);
             color: var(--text);
             background: var(--bg);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
+        h1, h2, h3, .section-header h2, .timeline-role, .stat-number, .impact-number {
+            font-family: var(--font-display);
+        }
+
+        /* ============================================
+           3. GRAIN TEXTURE
+           ============================================ */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 256px 256px;
+        }
+
+        /* ============================================
+           4. SCROLL PROGRESS BAR
+           ============================================ */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: var(--accent);
+            z-index: 10002;
+            transition: width 0.05s linear;
+        }
+
+        /* ============================================
+           5. CUSTOM CURSOR (desktop only)
+           ============================================ */
+        .cursor-dot, .cursor-outline {
+            display: none;
+        }
+        @media (pointer: fine) {
+            .cursor-dot {
+                display: block;
+                position: fixed;
+                width: 6px;
+                height: 6px;
+                background: var(--accent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 99999;
+                transform: translate(-50%, -50%);
+                transition: width 0.2s, height 0.2s;
+            }
+            .cursor-outline {
+                display: block;
+                position: fixed;
+                width: 32px;
+                height: 32px;
+                border: 1.5px solid var(--accent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 99998;
+                transform: translate(-50%, -50%);
+                opacity: 0.4;
+                transition: width 0.25s, height 0.25s, opacity 0.25s;
+            }
+            .cursor-dot.hovering { width: 10px; height: 10px; }
+            .cursor-outline.hovering { width: 44px; height: 44px; opacity: 0.25; }
+            body { cursor: none; }
+            a, button, .skill-card, .edu-card, .portfolio-card, .interest-card, .timeline-card, input, .hamburger { cursor: none; }
+        }
+
+        /* ============================================
+           6. NAVIGATION
+           ============================================ */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
-            transition: box-shadow 0.3s ease;
+            transition: transform 0.35s ease, box-shadow 0.3s ease;
         }
-
-        nav.scrolled {
-            box-shadow: var(--shadow);
-        }
+        nav.scrolled { box-shadow: var(--shadow); }
+        nav.nav-hidden { transform: translateY(-100%); }
 
         .nav-inner {
             max-width: 1100px;
@@ -63,6 +209,7 @@
         }
 
         .nav-logo {
+            font-family: var(--font-display);
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary);
@@ -71,24 +218,20 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.75rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 500;
             transition: color 0.2s;
             position: relative;
         }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent);
-        }
-
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
         .nav-links a.active::after {
             content: '';
             position: absolute;
@@ -100,21 +243,54 @@
             border-radius: 1px;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            padding: 0.45rem;
+            border-radius: 8px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .theme-toggle:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+        .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .theme-toggle .sun-icon { display: none; }
+        .theme-toggle .moon-icon { display: block; }
+        [data-theme="dark"] .theme-toggle .sun-icon { display: block; }
+        [data-theme="dark"] .theme-toggle .moon-icon { display: none; }
+
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
+            background: none;
+            border: none;
+            padding: 4px;
         }
-
         .hamburger span {
             width: 24px;
             height: 2px;
             background: var(--primary);
             transition: all 0.3s;
+            display: block;
         }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-        /* Hero */
+        /* ============================================
+           7. HERO SECTION
+           ============================================ */
         .hero {
             padding: 10rem 2rem 6rem;
             max-width: 1100px;
@@ -123,82 +299,126 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 4rem;
+            position: relative;
+        }
+
+        .hero-greeting {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 3.2rem;
+            font-weight: 700;
             color: var(--primary);
-            line-height: 1.15;
+            line-height: 1.1;
             letter-spacing: -1.5px;
             margin-bottom: 0.75rem;
         }
-
         .hero-text .subtitle {
+            font-family: var(--font-display);
             font-size: 1.25rem;
             color: var(--accent);
             font-weight: 600;
             margin-bottom: 1rem;
         }
-
         .hero-text .summary {
             font-size: 1.05rem;
             color: var(--text-light);
             line-height: 1.75;
             margin-bottom: 2rem;
         }
-
         .hero-cta {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
 
+        /* Hero load animations */
+        .hero-anim { opacity: 0; transform: translateY(20px); animation: heroFadeUp 0.6s ease forwards; }
+        .hero-anim-1 { animation-delay: 0.2s; }
+        .hero-anim-2 { animation-delay: 0.35s; }
+        .hero-anim-3 { animation-delay: 0.5s; }
+        .hero-anim-4 { animation-delay: 0.65s; }
+        .hero-anim-5 { animation-delay: 0.8s; }
+        .hero-anim-6 { animation-delay: 0.95s; }
+        @keyframes heroFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Parallax wrapper */
+        .hero-bg-parallax {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .hero-bg-parallax::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -10%;
+            width: 120%;
+            height: calc(100% + 100px);
+            background: radial-gradient(ellipse at 70% 30%, var(--accent-light) 0%, transparent 60%);
+            will-change: transform;
+        }
+
+        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
+            padding: 0.7rem 1.35rem;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
+            font-family: var(--font-body);
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.25s;
             cursor: pointer;
             border: none;
+            position: relative;
+            overflow: hidden;
         }
-
         .btn-primary {
             background: var(--accent);
             color: white;
         }
-
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn-primary:hover::after { left: 100%; }
         .btn-primary:hover {
-            background: #1a6ad4;
+            background: var(--accent-hover);
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(44,123,229,0.35);
         }
+        .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         .btn-outline {
             background: transparent;
             color: var(--accent);
             border: 2px solid var(--accent);
         }
-
         .btn-outline:hover {
             background: var(--accent-light);
             transform: translateY(-1px);
         }
+        .btn-outline:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-        }
-
-        .avatar-wrapper {
-            position: relative;
-        }
-
+        /* Avatar */
+        .hero-visual { display: flex; justify-content: center; }
+        .avatar-wrapper { position: relative; }
         .avatar-circle {
             width: 320px;
             height: 320px;
@@ -207,6 +427,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: var(--font-display);
             font-size: 7rem;
             color: white;
             font-weight: 700;
@@ -214,27 +435,24 @@
             box-shadow: 0 20px 60px rgba(44,123,229,0.25);
             overflow: hidden;
         }
-
         .avatar-circle img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 15%;
         }
-
         .avatar-badge {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            background: white;
+            background: var(--white);
+            color: var(--primary);
             border-radius: 12px;
             padding: 0.6rem 1rem;
             box-shadow: var(--shadow-lg);
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--primary);
         }
-
         .avatar-badge .dot {
             display: inline-block;
             width: 8px;
@@ -244,34 +462,21 @@
             margin-right: 6px;
             animation: pulse 2s ease-in-out infinite;
         }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .section-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 3rem;
-        }
-
+        /* ============================================
+           8. SECTIONS SHARED
+           ============================================ */
+        section { padding: 5rem 2rem; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+        .section-header { margin-bottom: 3rem; }
         .section-header h2 {
             font-size: 2rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary);
             letter-spacing: -0.75px;
             margin-bottom: 0.5rem;
         }
-
         .section-header .line {
             width: 48px;
             height: 3px;
@@ -279,10 +484,14 @@
             border-radius: 2px;
         }
 
-        /* Stats */
+        /* ============================================
+           9. STATS BAR
+           ============================================ */
         .stats-bar {
-            background: var(--white);
-            border: 1px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
             border-radius: 16px;
             padding: 2.5rem 3rem;
             display: grid;
@@ -294,18 +503,13 @@
             z-index: 2;
             box-shadow: var(--shadow-lg);
         }
-
-        .stat-item {
-            text-align: center;
-        }
-
+        .stat-item { text-align: center; }
         .stat-number {
             font-size: 2.25rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--accent);
             letter-spacing: -1px;
         }
-
         .stat-label {
             font-size: 0.85rem;
             color: var(--text-light);
@@ -313,49 +517,130 @@
             margin-top: 0.25rem;
         }
 
-        /* Experience */
-        .experience-section {
-            background: var(--white);
+        /* ============================================
+           10. CURRENTLY SECTION
+           ============================================ */
+        .currently-section {
+            padding: 3rem 2rem 1rem;
         }
+        .currently-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .currently-card h3 {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .currently-item {
+            padding: 0.3rem 0;
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           11. IMPACT BY NUMBERS
+           ============================================ */
+        .impact-section {
+            padding: 3rem 2rem 4rem;
+        }
+        .impact-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .impact-item {
+            text-align: center;
+            flex: 1;
+            min-width: 0;
+        }
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .impact-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-top: 0.35rem;
+            line-height: 1.4;
+        }
+
+        /* ============================================
+           12. EXPERIENCE TIMELINE
+           ============================================ */
+        .experience-section { background: var(--bg); }
 
         .timeline {
             position: relative;
-            padding-left: 2rem;
+            padding-left: 0;
         }
-
         .timeline::before {
             content: '';
             position: absolute;
-            left: 7px;
-            top: 8px;
-            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
             width: 2px;
             background: var(--border);
         }
-
         .timeline-item {
             position: relative;
+            width: calc(50% - 30px);
             padding-bottom: 3rem;
         }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item:nth-child(odd) { margin-right: auto; }
+        .timeline-item:nth-child(even) { margin-left: auto; }
 
-        .timeline-item:last-child {
-            padding-bottom: 0;
+        .timeline-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .timeline-card:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-left-color: var(--accent);
         }
 
         .timeline-dot {
             position: absolute;
-            left: -2rem;
-            top: 6px;
+            top: 1.75rem;
             width: 16px;
             height: 16px;
             border-radius: 50%;
             background: var(--accent);
-            border: 3px solid var(--white);
+            border: 3px solid var(--bg);
             box-shadow: 0 0 0 2px var(--accent);
+            z-index: 1;
         }
-
+        .timeline-item:nth-child(odd) .timeline-dot { right: -38px; }
+        .timeline-item:nth-child(even) .timeline-dot { left: -38px; }
         .timeline-item:not(:first-child) .timeline-dot {
-            background: var(--white);
+            background: var(--bg);
             box-shadow: 0 0 0 2px var(--border);
         }
 
@@ -367,24 +652,22 @@
             gap: 0.5rem;
             margin-bottom: 0.5rem;
         }
-
         .timeline-role {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--primary);
         }
-
         .timeline-date {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-light);
             background: var(--bg);
-            padding: 0.25rem 0.75rem;
+            padding: 0.2rem 0.65rem;
             border-radius: 20px;
             font-weight: 500;
+            border: 1px solid var(--border);
         }
-
         .timeline-company {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--accent);
             font-weight: 600;
             margin-bottom: 0.75rem;
@@ -392,7 +675,6 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .timeline-company .company-logo {
             width: 22px;
             height: 22px;
@@ -404,22 +686,15 @@
             font-weight: 800;
             color: white;
         }
-
         .logo-expedia { background: #fbcc33; color: #1a1a2e !important; }
         .logo-google { background: #4285f4; }
         .logo-default { background: #64748b; }
 
-        .timeline-desc {
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .timeline-desc li {
-            margin-bottom: 0.4rem;
-        }
-
+        .timeline-desc { color: var(--text-light); line-height: 1.8; font-size: 0.9rem; }
+        .timeline-desc li { margin-bottom: 0.35rem; }
         .timeline-subrole {
-            font-size: 1rem;
+            font-family: var(--font-display);
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--primary);
             margin-top: 1.25rem;
@@ -427,48 +702,45 @@
             padding-bottom: 0.25rem;
             border-bottom: 1px solid var(--border);
         }
-
-        .timeline-subrole:first-child {
-            margin-top: 0;
-        }
-
+        .timeline-subrole:first-child { margin-top: 0; }
         .timeline-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.4rem;
             margin-top: 1rem;
         }
-
         .tag {
-            font-size: 0.78rem;
-            padding: 0.3rem 0.75rem;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.65rem;
             background: var(--accent-light);
             color: var(--accent);
             border-radius: 20px;
             font-weight: 500;
         }
 
-        /* Skills */
+        /* ============================================
+           13. SKILLS
+           ============================================ */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
-
         .skill-card {
-            background: var(--white);
-            border: 1px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
             border-radius: 12px;
             padding: 1.75rem;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
         }
-
         .skill-card:hover {
-            border-color: var(--accent);
+            border-left-color: var(--accent);
             box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
+            transform: scale(1.02);
         }
-
         .skill-icon {
             width: 44px;
             height: 44px;
@@ -477,170 +749,101 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
             margin-bottom: 1rem;
         }
-
         .skill-card h3 {
             font-size: 1rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-
         .skill-card p {
             font-size: 0.88rem;
             color: var(--text-light);
             line-height: 1.6;
         }
 
-        /* Education */
-        .education-section {
-            background: var(--white);
-        }
-
+        /* ============================================
+           14. EDUCATION
+           ============================================ */
+        .education-section { background: var(--white); }
         .edu-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
         }
-
         .edu-card {
-            border: 1px solid var(--border);
+            border: 1px solid var(--glass-border);
             border-radius: 12px;
             padding: 2rem;
-            background: var(--bg);
-            transition: all 0.3s;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
         }
-
         .edu-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow);
-        }
-
-        .edu-degree {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .edu-specialization {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 500;
-            margin-bottom: 0.35rem;
-        }
-
-        .edu-school {
-            font-size: 0.95rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .edu-school a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .edu-school a:hover {
-            color: #1a6ad4;
-            text-decoration: underline;
-        }
-
-        .edu-year {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        /* Portfolio */
-        .portfolio-section {
-            background: var(--white);
-        }
-
-        .portfolio-card {
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            background: var(--bg);
-            transition: all 0.3s;
-        }
-
-        .portfolio-card:hover {
-            border-color: var(--accent);
+            border-left-color: var(--accent);
             box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
+            transform: scale(1.02);
         }
+        .edu-degree { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem; }
+        .edu-specialization { font-size: 0.9rem; color: var(--text-light); font-weight: 500; margin-bottom: 0.35rem; }
+        .edu-school { font-size: 0.95rem; color: var(--accent); font-weight: 600; margin-bottom: 0.25rem; }
+        .edu-school a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        .edu-school a:hover { color: var(--accent-hover); text-decoration: underline; }
+        .edu-year { font-size: 0.85rem; color: var(--text-light); }
 
-        .portfolio-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.35rem;
-        }
-
-        .portfolio-card h3 a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .portfolio-card h3 a:hover {
-            color: var(--accent);
-        }
-
-        .portfolio-url {
-            font-size: 0.88rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .portfolio-url a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .portfolio-url a:hover {
-            text-decoration: underline;
-        }
-
-        .portfolio-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            line-height: 1.75;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        /* Interests */
-        .interests-section {
-            background: var(--bg);
-        }
-
-        .interest-card {
-            border: 1px solid var(--border);
+        /* ============================================
+           15. PORTFOLIO
+           ============================================ */
+        .portfolio-section { background: var(--bg); }
+        .portfolio-card {
+            border: 1px solid var(--glass-border);
             border-radius: 12px;
             padding: 2rem;
-            background: var(--white);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .portfolio-card:hover {
+            border-left-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.02);
+        }
+        .portfolio-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem; }
+        .portfolio-card h3 a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+        .portfolio-card h3 a:hover { color: var(--accent); }
+        .portfolio-url { font-size: 0.88rem; margin-bottom: 0.75rem; }
+        .portfolio-url a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .portfolio-url a:hover { text-decoration: underline; }
+        .portfolio-card p { font-size: 0.95rem; color: var(--text-light); line-height: 1.75; margin-bottom: 1rem; }
+        .portfolio-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+        /* ============================================
+           16. INTERESTS
+           ============================================ */
+        .interests-section { background: var(--white); }
+        .interest-card {
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             display: flex;
             gap: 1.25rem;
             align-items: flex-start;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
         }
-
         .interest-card:hover {
-            border-color: var(--accent);
+            border-left-color: var(--accent);
             box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
+            transform: scale(1.02);
         }
-
         .interest-icon {
             width: 48px;
             height: 48px;
@@ -649,55 +852,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
             flex-shrink: 0;
         }
+        .interest-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+        .interest-card p { font-size: 0.92rem; color: var(--text-light); line-height: 1.75; }
 
-        .interest-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .interest-card p {
-            font-size: 0.92rem;
-            color: var(--text-light);
-            line-height: 1.75;
-        }
-
-        /* Contact */
-        .contact-section {
-            background: var(--primary);
-            color: white;
-        }
-
-        .contact-section .section-header h2 {
-            color: white;
-        }
-
-        .contact-section .section-header .line {
-            background: var(--accent);
-        }
-
-        .contact-content {
-            max-width: 700px;
-        }
-
-        .contact-content > p {
-            color: rgba(255,255,255,0.75);
-            line-height: 1.8;
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
+        /* ============================================
+           17. CONTACT
+           ============================================ */
+        .contact-section { background: var(--contact-bg); color: white; }
+        .contact-section .section-header h2 { color: white; }
+        .contact-section .section-header .line { background: var(--accent); }
+        .contact-content { max-width: 700px; }
+        .contact-content > p { color: rgba(255,255,255,0.75); line-height: 1.8; font-size: 1.05rem; margin-bottom: 2rem; }
+        .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
         .contact-link {
             display: flex;
             align-items: center;
@@ -707,11 +875,8 @@
             font-size: 0.95rem;
             transition: color 0.2s;
         }
-
-        .contact-link:hover {
-            color: white;
-        }
-
+        .contact-link:hover { color: white; }
+        .contact-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
         .contact-link-icon {
             width: 40px;
             height: 40px;
@@ -720,85 +885,214 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
         }
-
-        .btn-topmate {
+        .contact-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-topmate, .btn-resume-contact {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.85rem 2rem;
+            padding: 0.8rem 1.75rem;
             background: var(--accent);
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
+            font-family: var(--font-body);
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
         }
-
-        .btn-topmate:hover {
-            background: #1a6ad4;
+        .btn-topmate::after, .btn-resume-contact::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn-topmate:hover::after, .btn-resume-contact:hover::after { left: 100%; }
+        .btn-topmate:hover, .btn-resume-contact:hover {
+            background: var(--accent-hover);
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(44,123,229,0.35);
         }
+        .btn-resume-contact { background: transparent; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-resume-contact:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
 
-        /* Footer */
-        footer {
-            background: #0f1a26;
-            padding: 2rem;
-            text-align: center;
-        }
+        /* ============================================
+           18. FOOTER
+           ============================================ */
+        footer { background: var(--footer-bg); padding: 2rem; text-align: center; }
+        footer p { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+        footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: rgba(255,255,255,0.8); }
+        .footer-credit { margin-top: 0.5rem; }
 
-        footer p {
-            color: rgba(255,255,255,0.4);
-            font-size: 0.85rem;
-        }
+        /* ============================================
+           19. LANGUAGES
+           ============================================ */
+        .languages { display: flex; gap: 2rem; margin-top: 1.5rem; }
+        .lang-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+        .lang-name { font-size: 0.85rem; font-weight: 600; color: var(--primary); }
+        .lang-level { font-size: 0.75rem; color: var(--text-light); }
+        .lang-dots { display: flex; gap: 4px; }
+        .lang-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+        .lang-dot.filled { background: var(--accent); }
 
-        /* Languages bar */
-        .languages {
+        /* ============================================
+           20. BACK TO TOP
+           ============================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            cursor: pointer;
             display: flex;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .lang-item {
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 0.4rem;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 999;
         }
-
-        .lang-name {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary);
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
+        .back-to-top:hover { transform: scale(1.1); }
+        .back-to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-        .lang-level {
-            font-size: 0.75rem;
-            color: var(--text-light);
+        /* ============================================
+           21. COMMAND PALETTE
+           ============================================ */
+        .cmd-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 10001;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 20vh;
+            backdrop-filter: blur(4px);
         }
-
-        .lang-dots {
+        .cmd-overlay.open { display: flex; }
+        .cmd-palette {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 520px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .cmd-search {
             display: flex;
-            gap: 4px;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
         }
+        .cmd-search input {
+            flex: 1;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            color: var(--text);
+            outline: none;
+        }
+        .cmd-search input::placeholder { color: var(--text-light); }
+        .cmd-search kbd {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: var(--font-body);
+        }
+        .cmd-list {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 0.5rem;
+        }
+        .cmd-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text);
+            transition: background 0.15s;
+        }
+        .cmd-item:hover, .cmd-item.active { background: var(--accent-light); color: var(--accent); }
+        .cmd-item-icon { width: 20px; text-align: center; opacity: 0.6; }
 
-        .lang-dot {
+        /* ============================================
+           22. CONFETTI
+           ============================================ */
+        .confetti-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 99999;
+            overflow: hidden;
+        }
+        .confetti-piece {
+            position: absolute;
             width: 8px;
             height: 8px;
-            border-radius: 50%;
-            background: var(--border);
+            top: -10px;
+            border-radius: 2px;
+            animation: confettiFall 3s ease-in forwards;
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
         }
 
-        .lang-dot.filled {
-            background: var(--accent);
+        /* ============================================
+           23. SCROLL ANIMATIONS
+           ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .stagger-child {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .stagger-child.visible { opacity: 1; transform: translateY(0); }
 
-        /* Mobile */
+        /* ============================================
+           24. MOBILE RESPONSIVE
+           ============================================ */
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -806,24 +1100,10 @@
                 text-align: center;
                 gap: 2rem;
             }
-
-            .hero-visual {
-                order: -1;
-            }
-
-            .avatar-circle {
-                width: 200px;
-                height: 200px;
-                font-size: 4.5rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
+            .hero-visual { order: -1; }
+            .avatar-circle { width: 200px; height: 200px; font-size: 4.5rem; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-cta { justify-content: center; }
 
             .stats-bar {
                 grid-template-columns: 1fr;
@@ -831,65 +1111,124 @@
                 margin: -1rem 1rem 0;
             }
 
+            /* Mobile nav overlay */
             .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--bg);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                transition: right 0.4s ease;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+                z-index: 999;
+            }
+            .nav-links.open { right: 0; }
+            .nav-links a { font-size: 1.1rem; padding: 0.5rem 1rem; min-height: 48px; display: flex; align-items: center; }
+            .hamburger { display: flex; z-index: 1001; }
+
+            /* Mobile overlay backdrop */
+            .nav-overlay {
                 display: none;
-                position: absolute;
-                top: 64px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 1rem 2rem;
-                border-bottom: 1px solid var(--border);
-                gap: 1rem;
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.4);
+                z-index: 998;
+            }
+            .nav-overlay.open { display: block; }
+
+            .skills-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .interest-card { flex-direction: column; }
+            .timeline-header { flex-direction: column; }
+
+            /* Mobile timeline: left-aligned */
+            .timeline { padding-left: 2rem; }
+            .timeline::before {
+                left: 7px;
+                transform: none;
+            }
+            .timeline-item {
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            .timeline-dot {
+                left: -2rem !important;
+                right: auto !important;
             }
 
-            .nav-links.open {
-                display: flex;
+            /* Impact section mobile scroll */
+            .impact-row {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                padding-bottom: 0.5rem;
+            }
+            .impact-item {
+                flex: 0 0 180px;
+                scroll-snap-align: start;
             }
 
-            .hamburger {
-                display: flex;
-            }
+            .contact-ctas { flex-direction: column; }
+            .contact-ctas a { text-align: center; justify-content: center; }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .edu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .interest-card {
-                flex-direction: column;
-            }
-
-            .timeline-header {
-                flex-direction: column;
-            }
+            /* Disable parallax on mobile */
+            .hero-bg-parallax::before { display: none; }
         }
 
-        /* Print Styles */
+        /* ============================================
+           25. PRINT
+           ============================================ */
         @media print {
-            nav, .btn { display: none; }
+            nav, .btn, .back-to-top, .scroll-progress, .cursor-dot, .cursor-outline { display: none !important; }
             section { padding: 2rem 0; }
             .hero { padding-top: 2rem; }
+            body::after { display: none; }
         }
 
-        /* Scroll animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        /* ============================================
+           26. REDUCED MOTION
+           ============================================ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .hero-anim { opacity: 1; transform: none; }
+            .fade-in { opacity: 1; transform: none; }
+            .stagger-child { opacity: 1; transform: none; }
+            .cursor-dot, .cursor-outline { display: none !important; }
+            .hero-bg-parallax::before { display: none; }
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        /* ============================================
+           27. FOCUS VISIBLE (Accessibility)
+           ============================================ */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -904,34 +1243,47 @@
                 <li><a href="#interests">Interests</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="moon-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                    <svg class="sun-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero" id="about">
+        <div class="hero-bg-parallax" id="heroParallax"></div>
         <div class="hero-text">
-            <h1>Abhishek Gupta</h1>
-            <div class="subtitle">Product Leader</div>
-            <p class="summary">
+            <div class="hero-greeting hero-anim hero-anim-1" id="heroGreeting"></div>
+            <h1 class="hero-anim hero-anim-2">Abhishek Gupta</h1>
+            <div class="subtitle hero-anim hero-anim-3">Product Leader</div>
+            <p class="summary hero-anim hero-anim-4">
                 Dynamic and vision-driven Product Leader with extensive experience spearheading digital transformation in e-commerce and travel technology. Proven track record of building and scaling products at global companies including Expedia Group and Google, driving business growth through data-informed strategy and customer-centric innovation.
             </p>
-            <div class="hero-cta">
+            <div class="hero-cta hero-anim hero-anim-5">
                 <a href="#contact" class="btn btn-primary">
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
                     Get in Touch
                 </a>
+                <a href="/resume.pdf" target="_blank" class="btn btn-outline">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download Resume
+                </a>
                 <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" class="btn btn-outline">
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    LinkedIn Profile
+                    LinkedIn
                 </a>
             </div>
         </div>
-        <div class="hero-visual">
+        <div class="hero-visual hero-anim hero-anim-6">
             <div class="avatar-wrapper">
-                <div class="avatar-circle"><img src="profile.jpg" alt="Abhishek Gupta"></div>
+                <!-- Swap profile.jpg with your headshot image -->
+                <div class="avatar-circle"><img src="profile.jpg" alt="Abhishek Gupta - Product Leader" loading="eager" decoding="async"></div>
                 <div class="avatar-badge"><span class="dot"></span>Open to connect</div>
             </div>
         </div>
@@ -940,16 +1292,53 @@
     <!-- Stats -->
     <div class="stats-bar fade-in">
         <div class="stat-item">
-            <div class="stat-number">15+</div>
+            <div class="stat-number" data-target="15" data-suffix="+">15+</div>
             <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">2</div>
+            <div class="stat-number" data-target="2" data-suffix="">2</div>
             <div class="stat-label">Fortune 500 Companies</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">10+</div>
+            <div class="stat-number" data-target="10" data-suffix="+">10+</div>
             <div class="stat-label">Years of Product Experience</div>
+        </div>
+    </div>
+
+    <!-- Currently -->
+    <div class="currently-section fade-in">
+        <div class="currently-card">
+            <h3>Currently</h3>
+            <div class="currently-item">&#x1F52D; Exploring AI-driven travel experiences at Expedia</div>
+            <div class="currently-item">&#x1F4B3; Helping people maximise credit card rewards</div>
+            <div class="currently-item">&#x1F3AF; Open to: Advisory, Mentoring, Speaking</div>
+            <div class="currently-item">&#x1F4CD; Based in Gurugram, India</div>
+        </div>
+    </div>
+
+    <!-- Impact by Numbers -->
+    <div class="impact-section fade-in">
+        <div class="impact-row">
+            <div class="impact-item">
+                <div class="impact-number" data-target="100" data-prefix="$" data-suffix="M+">$100M+</div>
+                <div class="impact-label">Product Revenue Influenced</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number" data-target="20" data-suffix="x">20x</div>
+                <div class="impact-label">Transaction Growth (Expedia Rails)</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number" data-target="43" data-suffix="%">43%</div>
+                <div class="impact-label">Funnel Progression Improvement</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number" data-target="25" data-prefix="$" data-suffix="M">$25M</div>
+                <div class="impact-label">Client Portfolio Managed (Google)</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number" data-target="5" data-suffix="%">5%</div>
+                <div class="impact-label">Unit Profit Increase Exceeding Target by 66%</div>
+            </div>
         </div>
     </div>
 
@@ -964,122 +1353,123 @@
                 <!-- Expedia -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <div class="timeline-role">Product Leader (Various Roles)</div>
-                        <div class="timeline-date">Apr 2017 &ndash; Present</div>
-                    </div>
-                    <div class="timeline-company">
-                        <span class="company-logo logo-expedia">E</span>
-                        Expedia Group &middot; Gurugram, India
-                    </div>
-                    <div class="timeline-desc">
-                        <div class="timeline-subrole">Expedia Flights &ndash; Reimagining experience, onboarding ancillaries, craftsmanship &amp; growth</div>
-                        <ul>
-                            <li>Product strategy for 0-to-1 product offerings like flights loyalty/member-only deals, post-booking ancillary sales &amp; ancillary monetization</li>
-                            <li>Creation of annual strategic plan &amp; execution with objective of 5x growth (from 2% to 10% of total business)</li>
-                            <li>Product owner for ancillary merchandising (free &amp; paid seats/bags/branded fares) &mdash; improved ancillary selection experience resulting in 5% increase in unit profit, exceeding target by 66%</li>
-                            <li>Reimagined flight upsell experience focused on incremental price &amp; value prop, drove gross profit by +1%</li>
-                            <li>Product craftsmanship &amp; shopping experience redesign &mdash; mobile CVR increased by 1.5% &amp; funnel progression by 43%</li>
-                            <li>Managed SEO &amp; SEM landing pages contributing to ~7% of total flight transactions with 25%+ YoY growth</li>
-                        </ul>
-
-                        <div class="timeline-subrole">Expedia Activities &ndash; Revamping shopping &amp; attach experiences</div>
-                        <ul>
-                            <li>Product lead for Activities/Things to Do line of business with focus on delivering AI-led experiences</li>
-                            <li>Delivered AI-driven experiences including LLM-generated FAQs and AI-generated image-to-immersive video montage, resulting in significant increase in engagement and return visits</li>
-                            <li>Implemented cross-sell placements across the shopping funnel, leading to 11bps increase in attach</li>
-                            <li>Formulated comprehensive product strategy plan for 2026 focused on AI-led shopping and itinerary curation</li>
-                        </ul>
-
-                        <div class="timeline-subrole">Expedia Rails &ndash; Expansion &amp; Growth</div>
-                        <ul>
-                            <li>End-to-end development of shopping, booking &amp; post-booking experience for 4 rail supplies (National Rail UK, Deutsche Bahn Germany, Trenitalia Italy, Renfe Spain) across 5 EMEA point of sales (~$70B rail market)</li>
-                            <li>Led product expansion from 1 rail supply &times; POS combo to 10+ combinations with 20x transaction growth</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-tags">
-                        <span class="tag">Product Strategy</span>
-                        <span class="tag">E-Commerce</span>
-                        <span class="tag">Travel Tech</span>
-                        <span class="tag">AI/LLM</span>
-                        <span class="tag">Personalization</span>
-                        <span class="tag">A/B Testing</span>
-                        <span class="tag">Ancillary Revenue</span>
-                        <span class="tag">Cross-sell</span>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-role">Product Leader (Various Roles)</div>
+                            <div class="timeline-date">Apr 2017 &ndash; Present</div>
+                        </div>
+                        <div class="timeline-company">
+                            <span class="company-logo logo-expedia">E</span>
+                            Expedia Group &middot; Gurugram, India
+                        </div>
+                        <div class="timeline-desc">
+                            <div class="timeline-subrole">Expedia Flights &ndash; Reimagining experience, onboarding ancillaries, craftsmanship &amp; growth</div>
+                            <ul>
+                                <li>Product strategy for 0-to-1 product offerings like flights loyalty/member-only deals, post-booking ancillary sales &amp; ancillary monetization</li>
+                                <li>Creation of annual strategic plan &amp; execution with objective of 5x growth (from 2% to 10% of total business)</li>
+                                <li>Product owner for ancillary merchandising (free &amp; paid seats/bags/branded fares) &mdash; improved ancillary selection experience resulting in 5% increase in unit profit, exceeding target by 66%</li>
+                                <li>Reimagined flight upsell experience focused on incremental price &amp; value prop, drove gross profit by +1%</li>
+                                <li>Product craftsmanship &amp; shopping experience redesign &mdash; mobile CVR increased by 1.5% &amp; funnel progression by 43%</li>
+                                <li>Managed SEO &amp; SEM landing pages contributing to ~7% of total flight transactions with 25%+ YoY growth</li>
+                            </ul>
+                            <div class="timeline-subrole">Expedia Activities &ndash; Revamping shopping &amp; attach experiences</div>
+                            <ul>
+                                <li>Product lead for Activities/Things to Do line of business with focus on delivering AI-led experiences</li>
+                                <li>Delivered AI-driven experiences including LLM-generated FAQs and AI-generated image-to-immersive video montage, resulting in significant increase in engagement and return visits</li>
+                                <li>Implemented cross-sell placements across the shopping funnel, leading to 11bps increase in attach</li>
+                                <li>Formulated comprehensive product strategy plan for 2026 focused on AI-led shopping and itinerary curation</li>
+                            </ul>
+                            <div class="timeline-subrole">Expedia Rails &ndash; Expansion &amp; Growth</div>
+                            <ul>
+                                <li>End-to-end development of shopping, booking &amp; post-booking experience for 4 rail supplies (National Rail UK, Deutsche Bahn Germany, Trenitalia Italy, Renfe Spain) across 5 EMEA point of sales (~$70B rail market)</li>
+                                <li>Led product expansion from 1 rail supply &times; POS combo to 10+ combinations with 20x transaction growth</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tag">Product Strategy</span>
+                            <span class="tag">E-Commerce</span>
+                            <span class="tag">Travel Tech</span>
+                            <span class="tag">AI/LLM</span>
+                            <span class="tag">Personalization</span>
+                            <span class="tag">A/B Testing</span>
+                            <span class="tag">Ancillary Revenue</span>
+                            <span class="tag">Cross-sell</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Google -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <div class="timeline-role">Campaign Manager (US Entertainment Industry)</div>
-                        <div class="timeline-date">Oct 2012 &ndash; Apr 2016</div>
-                    </div>
-                    <div class="timeline-company">
-                        <span class="company-logo logo-google">G</span>
-                        Google (Alphabet Inc.)
-                    </div>
-                    <div class="timeline-desc">
-                        <div class="timeline-subrole">Account Management &ndash; Pre &amp; Post Sales</div>
-                        <ul>
-                            <li>End-to-end account management &amp; optimization of ~$25M portfolio of clients like Yahoo, Warner Bros, EA, Sony PlayStation</li>
-                            <li>Single-handedly managed 10+ customers with 25+ digital marketing accounts having 100+ running campaigns</li>
-                            <li>Built pre-sales digital marketing and post-sales implementation strategy for Google's top 10+ priority US Ticketing, Publishing &amp; Gaming clients with quarterly revenue target of ~$25M&ndash;$30M</li>
-                            <li>Designed launch strategies for top 10 games and top gaming consoles accounting for ~$50M+ revenue</li>
-                        </ul>
-
-                        <div class="timeline-subrole">Program Management &amp; Leadership</div>
-                        <ul>
-                            <li>Part of the team that set up vendor operations for Google India catering to 400+ team touching $10B revenues</li>
-                            <li>Conceptualized &amp; drove vendor utilization project across 30 teams, increasing outsourcing from ~40% to ~80%</li>
-                            <li>Mentored &amp; trained 3 new Googlers, evaluated 15+ new joiners</li>
-                        </ul>
-
-                        <div class="timeline-subrole">Key Recognitions</div>
-                        <ul>
-                            <li>Won Gold Award for a pitch for a major Gaming Hardware client leading to $1M+ contract</li>
-                            <li>Awarded Management Spot Bonus &amp; 14 Peer Bonuses for delivering on multiple projects</li>
-                            <li>Conceptualized &lsquo;Image Extensions&rsquo; Impact Analysis Tool recognized by global product management team</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-tags">
-                        <span class="tag">Digital Advertising</span>
-                        <span class="tag">Account Management</span>
-                        <span class="tag">Search/Display/YouTube</span>
-                        <span class="tag">Program Management</span>
-                        <span class="tag">Vendor Operations</span>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-role">Campaign Manager (US Entertainment Industry)</div>
+                            <div class="timeline-date">Oct 2012 &ndash; Apr 2016</div>
+                        </div>
+                        <div class="timeline-company">
+                            <span class="company-logo logo-google">G</span>
+                            Google (Alphabet Inc.)
+                        </div>
+                        <div class="timeline-desc">
+                            <div class="timeline-subrole">Account Management &ndash; Pre &amp; Post Sales</div>
+                            <ul>
+                                <li>End-to-end account management &amp; optimization of ~$25M portfolio of clients like Yahoo, Warner Bros, EA, Sony PlayStation</li>
+                                <li>Single-handedly managed 10+ customers with 25+ digital marketing accounts having 100+ running campaigns</li>
+                                <li>Built pre-sales digital marketing and post-sales implementation strategy for Google's top 10+ priority US Ticketing, Publishing &amp; Gaming clients with quarterly revenue target of ~$25M&ndash;$30M</li>
+                                <li>Designed launch strategies for top 10 games and top gaming consoles accounting for ~$50M+ revenue</li>
+                            </ul>
+                            <div class="timeline-subrole">Program Management &amp; Leadership</div>
+                            <ul>
+                                <li>Part of the team that set up vendor operations for Google India catering to 400+ team touching $10B revenues</li>
+                                <li>Conceptualized &amp; drove vendor utilization project across 30 teams, increasing outsourcing from ~40% to ~80%</li>
+                                <li>Mentored &amp; trained 3 new Googlers, evaluated 15+ new joiners</li>
+                            </ul>
+                            <div class="timeline-subrole">Key Recognitions</div>
+                            <ul>
+                                <li>Won Gold Award for a pitch for a major Gaming Hardware client leading to $1M+ contract</li>
+                                <li>Awarded Management Spot Bonus &amp; 14 Peer Bonuses for delivering on multiple projects</li>
+                                <li>Conceptualized &lsquo;Image Extensions&rsquo; Impact Analysis Tool recognized by global product management team</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tag">Digital Advertising</span>
+                            <span class="tag">Account Management</span>
+                            <span class="tag">Search/Display/YouTube</span>
+                            <span class="tag">Program Management</span>
+                            <span class="tag">Vendor Operations</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Earlier Career -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <div class="timeline-role">Associate Product Manager &rarr; Systems Engineer</div>
-                        <div class="timeline-date">Jun 2010 &ndash; Oct 2012</div>
-                    </div>
-                    <div class="timeline-company">
-                        <span class="company-logo logo-default">+</span>
-                        Earlier Career
-                    </div>
-                    <div class="timeline-desc">
-                        <div class="timeline-subrole">Boston Strategies International (Nov 2011 &ndash; Oct 2012)</div>
-                        <ul>
-                            <li>Associate Product Manager &mdash; Market analysis using secondary research for $200B+ Oil Company; part of a team that brought in 50%+ of revenues</li>
-                            <li>Developed features for internal sales product to facilitate sales management with 50+ suppliers globally</li>
-                        </ul>
-
-                        <div class="timeline-subrole">Infosys (Jun 2010 &ndash; Nov 2011)</div>
-                        <ul>
-                            <li>Systems Engineer &mdash; Worked on PeopleSoft HRMS implementation project for a major Fortune 500 client</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-tags">
-                        <span class="tag">Consulting</span>
-                        <span class="tag">Market Analysis</span>
-                        <span class="tag">Product Development</span>
-                        <span class="tag">Enterprise Software</span>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-role">Associate Product Manager &rarr; Systems Engineer</div>
+                            <div class="timeline-date">Jun 2010 &ndash; Oct 2012</div>
+                        </div>
+                        <div class="timeline-company">
+                            <span class="company-logo logo-default">+</span>
+                            Earlier Career
+                        </div>
+                        <div class="timeline-desc">
+                            <div class="timeline-subrole">Boston Strategies International (Nov 2011 &ndash; Oct 2012)</div>
+                            <ul>
+                                <li>Associate Product Manager &mdash; Market analysis using secondary research for $200B+ Oil Company; part of a team that brought in 50%+ of revenues</li>
+                                <li>Developed features for internal sales product to facilitate sales management with 50+ suppliers globally</li>
+                            </ul>
+                            <div class="timeline-subrole">Infosys (Jun 2010 &ndash; Nov 2011)</div>
+                            <ul>
+                                <li>Systems Engineer &mdash; Worked on PeopleSoft HRMS implementation project for a major Fortune 500 client</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tag">Consulting</span>
+                            <span class="tag">Market Analysis</span>
+                            <span class="tag">Product Development</span>
+                            <span class="tag">Enterprise Software</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1095,44 +1485,32 @@
             </div>
             <div class="skills-grid fade-in">
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-                    </div>
+                    <div class="skill-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
                     <h3>Product Strategy</h3>
                     <p>Defining vision, roadmaps, and OKRs that align product development with business goals and market opportunity.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
+                    <div class="skill-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
                     <h3>E-Commerce &amp; Marketplace</h3>
                     <p>Deep expertise in online marketplace dynamics, conversion optimization, pricing strategy, and customer lifecycle management.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                    </div>
+                    <div class="skill-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
                     <h3>Cross-Functional Leadership</h3>
                     <p>Leading engineering, design, analytics, and business teams to deliver impactful products through collaboration and alignment.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                    </div>
+                    <div class="skill-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
                     <h3>Data-Driven Decision Making</h3>
                     <p>Leveraging analytics, A/B experimentation, and user research to make informed product decisions and measure outcomes.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                    </div>
+                    <div class="skill-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
                     <h3>Digital Transformation</h3>
                     <p>Driving technology modernization and digital-first experiences to create scalable, high-performance platforms.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                    </div>
+                    <div class="skill-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
                     <h3>Travel Technology</h3>
                     <p>Specialized knowledge in travel industry dynamics, distribution systems, and building best-in-class booking experiences.</p>
                 </div>
@@ -1143,58 +1521,25 @@
     <!-- Education -->
     <section class="education-section" id="education">
         <div class="section-inner">
-            <div class="section-header fade-in">
-                <h2>Education</h2>
-                <div class="line"></div>
-            </div>
+            <div class="section-header fade-in"><h2>Education</h2><div class="line"></div></div>
             <div class="edu-grid fade-in">
                 <div class="edu-card">
                     <div class="edu-degree">Post Graduate Programme in Management</div>
                     <div class="edu-specialization">Majors &ndash; Marketing, Strategy &amp; Leadership</div>
-                    <div class="edu-school"><a href="https://www.isb.edu" target="_blank">Indian School of Business (ISB)</a></div>
+                    <div class="edu-school"><a href="https://www.isb.edu" target="_blank" rel="noopener">Indian School of Business (ISB)</a></div>
                     <div class="edu-year">2016 &ndash; 2017</div>
                 </div>
                 <div class="edu-card">
                     <div class="edu-degree">Bachelors of Engineering</div>
                     <div class="edu-specialization">Information Technology</div>
-                    <div class="edu-school"><a href="https://uiet.puchd.ac.in" target="_blank">University Institute of Engineering &amp; Technology, Panjab University</a></div>
+                    <div class="edu-school"><a href="https://uiet.puchd.ac.in" target="_blank" rel="noopener">University Institute of Engineering &amp; Technology, Panjab University</a></div>
                     <div class="edu-year">2006 &ndash; 2010</div>
                 </div>
             </div>
             <div class="languages fade-in" style="margin-top: 2.5rem;">
-                <div class="lang-item">
-                    <div class="lang-name">English</div>
-                    <div class="lang-dots">
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                    </div>
-                    <div class="lang-level">Professional</div>
-                </div>
-                <div class="lang-item">
-                    <div class="lang-name">Hindi</div>
-                    <div class="lang-dots">
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                    </div>
-                    <div class="lang-level">Native</div>
-                </div>
-                <div class="lang-item">
-                    <div class="lang-name">Punjabi</div>
-                    <div class="lang-dots">
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot filled"></div>
-                        <div class="lang-dot"></div>
-                    </div>
-                    <div class="lang-level">Fluent</div>
-                </div>
+                <div class="lang-item"><div class="lang-name">English</div><div class="lang-dots"><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div></div><div class="lang-level">Professional</div></div>
+                <div class="lang-item"><div class="lang-name">Hindi</div><div class="lang-dots"><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div></div><div class="lang-level">Native</div></div>
+                <div class="lang-item"><div class="lang-name">Punjabi</div><div class="lang-dots"><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div></div><div class="lang-level">Fluent</div></div>
             </div>
         </div>
     </section>
@@ -1202,14 +1547,11 @@
     <!-- Product Portfolio -->
     <section class="portfolio-section" id="portfolio">
         <div class="section-inner">
-            <div class="section-header fade-in">
-                <h2>Product Portfolio</h2>
-                <div class="line"></div>
-            </div>
+            <div class="section-header fade-in"><h2>Product Portfolio</h2><div class="line"></div></div>
             <div class="fade-in">
                 <div class="portfolio-card">
-                    <h3><a href="https://www.abhishekgupta.cc" target="_blank">Personal Portfolio Website</a></h3>
-                    <div class="portfolio-url"><a href="https://www.abhishekgupta.cc" target="_blank">www.abhishekgupta.cc</a></div>
+                    <h3><a href="https://www.abhishekgupta.cc" target="_blank" rel="noopener">Personal Portfolio Website</a></h3>
+                    <div class="portfolio-url"><a href="https://www.abhishekgupta.cc" target="_blank" rel="noopener">www.abhishekgupta.cc</a></div>
                     <p>A modern, responsive personal portfolio website showcasing professional experience, skills, and interests. Built entirely using Claude Code (Anthropic's AI-powered coding tool) for rapid development, version-controlled on GitHub, and deployed via Vercel for seamless CI/CD. Demonstrates the power of AI-assisted development for quick prototyping and shipping production-quality web applications.</p>
                     <div class="portfolio-tags">
                         <span class="tag">Claude Code</span>
@@ -1226,15 +1568,10 @@
     <!-- Personal Interests -->
     <section class="interests-section" id="interests">
         <div class="section-inner">
-            <div class="section-header fade-in">
-                <h2>Personal Interests</h2>
-                <div class="line"></div>
-            </div>
+            <div class="section-header fade-in"><h2>Personal Interests</h2><div class="line"></div></div>
             <div class="fade-in">
                 <div class="interest-card">
-                    <div class="interest-icon">
-                        <svg width="24" height="24" fill="none" stroke="#2c7be5" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                    </div>
+                    <div class="interest-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
                     <div>
                         <h3>Credit Card Enthusiast &amp; Points/Miles Strategist</h3>
                         <p>Passionate about the world of credit card rewards, airline miles, and hotel points. I love helping friends, family, and anyone willing to listen build smart points &amp; miles strategies to maximise the return on their everyday spending. Whether it's picking the right card for your spending pattern, stacking offers, or planning award travel &mdash; I'm always happy to geek out and help you get more value from every swipe. Feel free to reach out if you'd like to chat about optimising your rewards game!</p>
@@ -1247,37 +1584,34 @@
     <!-- Contact -->
     <section class="contact-section" id="contact">
         <div class="section-inner">
-            <div class="section-header fade-in">
-                <h2>Let's Connect</h2>
-                <div class="line"></div>
-            </div>
+            <div class="section-header fade-in"><h2>Let's Connect</h2><div class="line"></div></div>
             <div class="fade-in">
                 <div class="contact-content">
                     <p>I'm always open to discussing product strategy, e-commerce innovation, travel technology, or career mentoring opportunities. Reach out directly through any of the channels below.</p>
                     <div class="contact-links">
                         <a href="mailto:guptaabhishek@Outlook.com" class="contact-link">
-                            <div class="contact-link-icon">
-                                <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
-                            </div>
+                            <div class="contact-link-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg></div>
                             guptaabhishek@Outlook.com
                         </a>
                         <a href="tel:+919650086940" class="contact-link">
-                            <div class="contact-link-icon">
-                                <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                            </div>
+                            <div class="contact-link-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
                             +91 96500 86940
                         </a>
-                        <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" class="contact-link">
-                            <div class="contact-link-icon">
-                                <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                            </div>
+                        <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" rel="noopener" class="contact-link">
+                            <div class="contact-link-icon"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
                             linkedin.com/in/guptaabhishekisb
                         </a>
                     </div>
-                    <a href="https://topmate.io/guptaabhishek" target="_blank" class="btn-topmate">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        Book a Session on Topmate
-                    </a>
+                    <div class="contact-ctas">
+                        <a href="https://topmate.io/guptaabhishek" target="_blank" rel="noopener" class="btn-topmate">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Book a Session on Topmate
+                        </a>
+                        <a href="/resume.pdf" target="_blank" class="btn-resume-contact">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download Resume
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1286,94 +1620,230 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Abhishek Gupta. All rights reserved.</p>
+        <p class="footer-credit">Built with &#10084;&#65039; using <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>, deployed on <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a></p>
     </footer>
 
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Command Palette -->
+    <div class="cmd-overlay" id="cmdOverlay">
+        <div class="cmd-palette" role="dialog" aria-label="Command palette">
+            <div class="cmd-search">
+                <svg width="18" height="18" fill="none" stroke="var(--text-light)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="cmdInput" placeholder="Type a command..." autocomplete="off">
+                <kbd>ESC</kbd>
+            </div>
+            <div class="cmd-list" id="cmdList"></div>
+        </div>
+    </div>
+
     <script>
-        // Navbar scroll effect
+    (function() {
+        'use strict';
+
+        /* ====== THEME ====== */
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const saved = localStorage.getItem('theme');
+        if (saved) { html.setAttribute('data-theme', saved); }
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { html.setAttribute('data-theme', 'dark'); }
+        themeToggle.addEventListener('click', () => {
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        /* ====== NAV HIDE/SHOW ====== */
         const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
         window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 10);
-        });
+            const y = window.scrollY;
+            navbar.classList.toggle('scrolled', y > 10);
+            if (y > lastScroll && y > 80) navbar.classList.add('nav-hidden');
+            else navbar.classList.remove('nav-hidden');
+            lastScroll = y;
+        }, { passive: true });
 
-        // Mobile menu toggle
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('open');
+        /* ====== SCROLL PROGRESS ====== */
+        const progressBar = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
+        }, { passive: true });
+
+        /* ====== TIME GREETING ====== */
+        const hour = new Date().getHours();
+        let greeting = 'Good evening &#x1F319;';
+        if (hour >= 5 && hour < 12) greeting = 'Good morning &#x2600;&#xFE0F;';
+        else if (hour >= 12 && hour < 17) greeting = 'Good afternoon &#x1F324;&#xFE0F;';
+        document.getElementById('heroGreeting').innerHTML = greeting;
+
+        /* ====== MOBILE MENU ====== */
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        function closeMenu() {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
+            navOverlay.classList.remove('open');
         }
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('open');
-            });
+        hamburger.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            navOverlay.classList.toggle('open');
         });
+        navOverlay.addEventListener('click', closeMenu);
+        document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', closeMenu));
 
-        // Active nav link on scroll
+        /* ====== ACTIVE NAV ====== */
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
+        const allNavLinks = document.querySelectorAll('.nav-links a');
         window.addEventListener('scroll', () => {
             let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
+            sections.forEach(s => { if (scrollY >= s.offsetTop - 100) current = s.id; });
+            allNavLinks.forEach(l => {
+                l.classList.remove('active');
+                if (l.getAttribute('href') === '#' + current) l.classList.add('active');
             });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
+        }, { passive: true });
 
-        // Scroll reveal animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
+        /* ====== SCROLL REVEAL ====== */
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
         }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => revealObs.observe(el));
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Smooth number counting animation for stats
-        function animateStats() {
-            document.querySelectorAll('.stat-number').forEach(stat => {
-                const text = stat.textContent;
-                const hasPlus = text.includes('+');
-                const hasK = text.includes('K');
-                let target = parseInt(text.replace(/[^0-9]/g, ''));
-
-                if (hasK) target = target;
+        /* ====== COUNTING ANIMATION ====== */
+        function animateCounters(container) {
+            container.querySelectorAll('[data-target]').forEach(el => {
+                const target = parseInt(el.dataset.target);
+                const prefix = el.dataset.prefix || '';
+                const suffix = el.dataset.suffix || '';
                 let current = 0;
-                const increment = Math.ceil(target / 40);
-                const suffix = (hasK ? 'K' : '') + (hasPlus ? '+' : '');
-
+                const increment = Math.max(1, Math.ceil(target / 50));
                 const timer = setInterval(() => {
                     current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    stat.textContent = current + suffix;
-                }, 30);
+                    if (current >= target) { current = target; clearInterval(timer); }
+                    el.textContent = prefix + current + suffix;
+                }, 25);
             });
         }
 
-        // Trigger stat animation when visible
         const statsBar = document.querySelector('.stats-bar');
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateStats();
-                    statsObserver.unobserve(entry.target);
-                }
+        const impactRow = document.querySelector('.impact-row');
+        const countObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { animateCounters(e.target); countObs.unobserve(e.target); }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.4 });
+        if (statsBar) countObs.observe(statsBar);
+        if (impactRow) countObs.observe(impactRow);
 
-        if (statsBar) statsObserver.observe(statsBar);
+        /* ====== BACK TO TOP ====== */
+        const btt = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { btt.classList.toggle('visible', window.scrollY > 500); }, { passive: true });
+        btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        /* ====== COMMAND PALETTE ====== */
+        const cmdOverlay = document.getElementById('cmdOverlay');
+        const cmdInput = document.getElementById('cmdInput');
+        const cmdList = document.getElementById('cmdList');
+        const commands = [
+            { label: 'Go to About', icon: '&#x1F464;', action: () => { document.getElementById('about').scrollIntoView({behavior:'smooth'}); }},
+            { label: 'Go to Experience', icon: '&#x1F4BC;', action: () => { document.getElementById('experience').scrollIntoView({behavior:'smooth'}); }},
+            { label: 'Go to Skills', icon: '&#x2699;&#xFE0F;', action: () => { document.getElementById('skills').scrollIntoView({behavior:'smooth'}); }},
+            { label: 'Go to Education', icon: '&#x1F393;', action: () => { document.getElementById('education').scrollIntoView({behavior:'smooth'}); }},
+            { label: 'Go to Product Portfolio', icon: '&#x1F4E6;', action: () => { document.getElementById('portfolio').scrollIntoView({behavior:'smooth'}); }},
+            { label: 'Go to Personal Interests', icon: '&#x2764;&#xFE0F;', action: () => { document.getElementById('interests').scrollIntoView({behavior:'smooth'}); }},
+            { label: 'Go to Contact', icon: '&#x1F4E7;', action: () => { document.getElementById('contact').scrollIntoView({behavior:'smooth'}); }},
+            { label: 'Download Resume', icon: '&#x1F4C4;', action: () => { window.open('/resume.pdf','_blank'); }},
+            { label: 'Copy Email Address', icon: '&#x1F4CB;', action: () => { navigator.clipboard.writeText('guptaabhishek@Outlook.com'); }},
+            { label: 'Open LinkedIn', icon: '&#x1F517;', action: () => { window.open('https://www.linkedin.com/in/guptaabhishekisb/','_blank'); }},
+            { label: 'Open Topmate', icon: '&#x1F4C5;', action: () => { window.open('https://topmate.io/guptaabhishek','_blank'); }},
+            { label: 'Toggle Dark Mode', icon: '&#x1F319;', action: () => { themeToggle.click(); }},
+        ];
+        let cmdIdx = 0;
+
+        function renderCommands(filter) {
+            const filtered = filter ? commands.filter(c => c.label.toLowerCase().includes(filter.toLowerCase())) : commands;
+            cmdList.innerHTML = filtered.map((c, i) =>
+                '<div class="cmd-item' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '"><span class="cmd-item-icon">' + c.icon + '</span>' + c.label + '</div>'
+            ).join('');
+            cmdIdx = 0;
+            cmdList.querySelectorAll('.cmd-item').forEach((item, i) => {
+                item.addEventListener('click', () => { filtered[i].action(); closeCmdPalette(); });
+            });
+            return filtered;
+        }
+
+        function openCmdPalette() { cmdOverlay.classList.add('open'); cmdInput.value = ''; renderCommands(''); cmdInput.focus(); }
+        function closeCmdPalette() { cmdOverlay.classList.remove('open'); }
+
+        document.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); cmdOverlay.classList.contains('open') ? closeCmdPalette() : openCmdPalette(); }
+            if (e.key === 'Escape' && cmdOverlay.classList.contains('open')) closeCmdPalette();
+            if (cmdOverlay.classList.contains('open')) {
+                const items = cmdList.querySelectorAll('.cmd-item');
+                if (e.key === 'ArrowDown') { e.preventDefault(); cmdIdx = Math.min(cmdIdx + 1, items.length - 1); items.forEach((it,i) => it.classList.toggle('active', i === cmdIdx)); }
+                if (e.key === 'ArrowUp') { e.preventDefault(); cmdIdx = Math.max(cmdIdx - 1, 0); items.forEach((it,i) => it.classList.toggle('active', i === cmdIdx)); }
+                if (e.key === 'Enter' && items[cmdIdx]) items[cmdIdx].click();
+            }
+        });
+        cmdInput.addEventListener('input', () => renderCommands(cmdInput.value));
+        cmdOverlay.addEventListener('click', (e) => { if (e.target === cmdOverlay) closeCmdPalette(); });
+
+        /* ====== CUSTOM CURSOR ====== */
+        if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const dot = document.getElementById('cursorDot');
+            const outline = document.getElementById('cursorOutline');
+            let mx = 0, my = 0, ox = 0, oy = 0;
+            document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+            (function anim() { ox += (mx - ox) * 0.15; oy += (my - oy) * 0.15; outline.style.left = ox + 'px'; outline.style.top = oy + 'px'; requestAnimationFrame(anim); })();
+            document.querySelectorAll('a, button, .skill-card, .edu-card, .portfolio-card, .interest-card, .timeline-card').forEach(el => {
+                el.addEventListener('mouseenter', () => { dot.classList.add('hovering'); outline.classList.add('hovering'); });
+                el.addEventListener('mouseleave', () => { dot.classList.remove('hovering'); outline.classList.remove('hovering'); });
+            });
+        }
+
+        /* ====== PARALLAX ====== */
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.innerWidth > 768) {
+            const pg = document.querySelector('.hero-bg-parallax');
+            if (pg) {
+                window.addEventListener('scroll', () => {
+                    pg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
+                }, { passive: true });
+            }
+        }
+
+        /* ====== KONAMI CODE ====== */
+        const konami = [38,38,40,40,37,39,37,39,66,65];
+        let ki = 0;
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode === konami[ki]) { ki++; if (ki === konami.length) { triggerConfetti(); ki = 0; } } else ki = 0;
+        });
+        function triggerConfetti() {
+            const c = document.createElement('div');
+            c.className = 'confetti-container';
+            document.body.appendChild(c);
+            const colors = ['#2c7be5','#6366f1','#22c55e','#f59e0b','#ef4444','#ec4899'];
+            for (let i = 0; i < 80; i++) {
+                const p = document.createElement('div');
+                p.className = 'confetti-piece';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 2 + 's';
+                p.style.animationDuration = (2 + Math.random() * 2) + 's';
+                p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                p.style.width = (4 + Math.random() * 6) + 'px';
+                p.style.height = p.style.width;
+                c.appendChild(p);
+            }
+            setTimeout(() => c.remove(), 5000);
+        }
+
+    })();
     </script>
 </body>
 </html>
