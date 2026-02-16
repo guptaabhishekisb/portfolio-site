@@ -13,13 +13,13 @@
     <meta property="og:title" content="Abhishek Gupta | Product Leader">
     <meta property="og:description" content="Product Leader with 15+ years of experience at Expedia Group and Google. Specializing in e-commerce, travel tech, and AI-driven product development.">
     <meta property="og:url" content="https://www.abhishekgupta.cc/">
-    <meta property="og:image" content="https://www.abhishekgupta.cc/og-image.png">
+    <meta property="og:image" content="https://www.abhishekgupta.cc/profile.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Abhishek Gupta | Product Leader">
     <meta name="twitter:description" content="Product Leader with 15+ years of experience at Expedia Group and Google. Specializing in e-commerce, travel tech, and AI-driven product development.">
-    <meta name="twitter:image" content="https://www.abhishekgupta.cc/og-image.png">
+    <meta name="twitter:image" content="https://www.abhishekgupta.cc/profile.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232c7be5'/%3E%3Ctext x='50' y='67' font-family='system-ui,sans-serif' font-size='48' font-weight='700' text-anchor='middle' fill='white'%3EAG%3C/text%3E%3C/svg%3E">
@@ -144,44 +144,6 @@
         }
 
         /* ============================================
-           5. CUSTOM CURSOR (desktop only)
-           ============================================ */
-        .cursor-dot, .cursor-outline {
-            display: none;
-        }
-        @media (pointer: fine) {
-            .cursor-dot {
-                display: block;
-                position: fixed;
-                width: 6px;
-                height: 6px;
-                background: var(--accent);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 99999;
-                transform: translate(-50%, -50%);
-                transition: width 0.2s, height 0.2s;
-            }
-            .cursor-outline {
-                display: block;
-                position: fixed;
-                width: 32px;
-                height: 32px;
-                border: 1.5px solid var(--accent);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 99998;
-                transform: translate(-50%, -50%);
-                opacity: 0.4;
-                transition: width 0.25s, height 0.25s, opacity 0.25s;
-            }
-            .cursor-dot.hovering { width: 10px; height: 10px; }
-            .cursor-outline.hovering { width: 44px; height: 44px; opacity: 0.25; }
-            body { cursor: none; }
-            a, button, .skill-card, .edu-card, .portfolio-card, .interest-card, .timeline-card, input, .hamburger { cursor: none; }
-        }
-
-        /* ============================================
            6. NAVIGATION
            ============================================ */
         nav {
@@ -232,6 +194,8 @@
             position: relative;
         }
         .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .nav-cta-mobile { display: none; }
+
         .nav-links a.active::after {
             content: '';
             position: absolute;
@@ -302,13 +266,6 @@
             position: relative;
         }
 
-        .hero-greeting {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
         .hero-text h1 {
             font-size: 3.2rem;
             font-weight: 700;
@@ -343,7 +300,6 @@
         .hero-anim-3 { animation-delay: 0.5s; }
         .hero-anim-4 { animation-delay: 0.65s; }
         .hero-anim-5 { animation-delay: 0.8s; }
-        .hero-anim-6 { animation-delay: 0.95s; }
         @keyframes heroFadeUp {
             to { opacity: 1; transform: translateY(0); }
         }
@@ -441,29 +397,6 @@
             object-fit: cover;
             object-position: center 15%;
         }
-        .avatar-badge {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: var(--white);
-            color: var(--primary);
-            border-radius: 12px;
-            padding: 0.6rem 1rem;
-            box-shadow: var(--shadow-lg);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .avatar-badge .dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            margin-right: 6px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
         /* ============================================
            8. SECTIONS SHARED
            ============================================ */
@@ -863,7 +796,7 @@
         .contact-section { background: var(--contact-bg); color: white; }
         .contact-section .section-header h2 { color: white; }
         .contact-section .section-header .line { background: var(--accent); }
-        .contact-content { max-width: 700px; }
+        .contact-content { max-width: 100%; }
         .contact-content > p { color: rgba(255,255,255,0.75); line-height: 1.8; font-size: 1.05rem; margin-bottom: 2rem; }
         .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
         .contact-link {
@@ -1131,6 +1064,8 @@
             .nav-links.open { right: 0; }
             .nav-links a { font-size: 1.1rem; padding: 0.5rem 1rem; min-height: 48px; display: flex; align-items: center; }
             .hamburger { display: flex; z-index: 1001; }
+            .nav-cta-btn { display: none !important; }
+            .nav-cta-mobile { display: list-item; list-style: none; }
 
             /* Mobile overlay backdrop */
             .nav-overlay {
@@ -1186,7 +1121,7 @@
            25. PRINT
            ============================================ */
         @media print {
-            nav, .btn, .back-to-top, .scroll-progress, .cursor-dot, .cursor-outline { display: none !important; }
+            nav, .btn, .back-to-top, .scroll-progress { display: none !important; }
             section { padding: 2rem 0; }
             .hero { padding-top: 2rem; }
             body::after { display: none; }
@@ -1205,7 +1140,6 @@
             .hero-anim { opacity: 1; transform: none; }
             .fade-in { opacity: 1; transform: none; }
             .stagger-child { opacity: 1; transform: none; }
-            .cursor-dot, .cursor-outline { display: none !important; }
             .hero-bg-parallax::before { display: none; }
         }
 
@@ -1223,10 +1157,6 @@
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Page scroll progress"></div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-outline" id="cursorOutline"></div>
-
     <!-- Mobile Nav Overlay -->
     <div class="nav-overlay" id="navOverlay"></div>
 
@@ -1242,8 +1172,13 @@
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#interests">Interests</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="nav-cta-mobile"><a href="https://topmate.io/guptaabhishek" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.95rem;padding:0.6rem 1.25rem;">Book a Session</a></li>
             </ul>
             <div class="nav-right">
+                <a href="https://topmate.io/guptaabhishek" target="_blank" rel="noopener" class="btn btn-primary nav-cta-btn" style="padding:0.45rem 1rem;font-size:0.82rem;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Book a Session
+                </a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <svg class="moon-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
                     <svg class="sun-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -1259,13 +1194,12 @@
     <section class="hero" id="about">
         <div class="hero-bg-parallax" id="heroParallax"></div>
         <div class="hero-text">
-            <div class="hero-greeting hero-anim hero-anim-1" id="heroGreeting"></div>
-            <h1 class="hero-anim hero-anim-2">Abhishek Gupta</h1>
-            <div class="subtitle hero-anim hero-anim-3">Product Leader</div>
-            <p class="summary hero-anim hero-anim-4">
+            <h1 class="hero-anim hero-anim-1">Abhishek Gupta</h1>
+            <div class="subtitle hero-anim hero-anim-2">Product Leader</div>
+            <p class="summary hero-anim hero-anim-3">
                 Dynamic and vision-driven Product Leader with extensive experience spearheading digital transformation in e-commerce and travel technology. Proven track record of building and scaling products at global companies including Expedia Group and Google, driving business growth through data-informed strategy and customer-centric innovation.
             </p>
-            <div class="hero-cta hero-anim hero-anim-5">
+            <div class="hero-cta hero-anim hero-anim-4">
                 <a href="#contact" class="btn btn-primary">
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
                     Get in Touch
@@ -1274,17 +1208,12 @@
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Download Resume
                 </a>
-                <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" class="btn btn-outline">
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    LinkedIn
-                </a>
             </div>
         </div>
-        <div class="hero-visual hero-anim hero-anim-6">
+        <div class="hero-visual hero-anim hero-anim-5">
             <div class="avatar-wrapper">
                 <!-- Swap profile.jpg with your headshot image -->
                 <div class="avatar-circle"><img src="profile.jpg" alt="Abhishek Gupta - Product Leader" loading="eager" decoding="async"></div>
-                <div class="avatar-badge"><span class="dot"></span>Open to connect</div>
             </div>
         </div>
     </section>
@@ -1589,17 +1518,13 @@
                 <div class="contact-content">
                     <p>I'm always open to discussing product strategy, e-commerce innovation, travel technology, or career mentoring opportunities. Reach out directly through any of the channels below.</p>
                     <div class="contact-links">
-                        <a href="mailto:guptaabhishek@Outlook.com" class="contact-link">
+                        <a href="mailto:guptaabhishek@outlook.com" class="contact-link">
                             <div class="contact-link-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg></div>
-                            guptaabhishek@Outlook.com
+                            guptaabhishek@outlook.com
                         </a>
                         <a href="tel:+919650086940" class="contact-link">
                             <div class="contact-link-icon"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
                             +91 96500 86940
-                        </a>
-                        <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" rel="noopener" class="contact-link">
-                            <div class="contact-link-icon"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-                            linkedin.com/in/guptaabhishekisb
                         </a>
                     </div>
                     <div class="contact-ctas">
@@ -1610,6 +1535,10 @@
                         <a href="/Abhishek_Gupta_CV_2026.pdf" target="_blank" class="btn-resume-contact">
                             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                             Download Resume
+                        </a>
+                        <a href="https://www.linkedin.com/in/guptaabhishekisb/" target="_blank" rel="noopener" class="btn-resume-contact">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
                         </a>
                     </div>
                 </div>
@@ -1673,13 +1602,6 @@
             const h = document.documentElement.scrollHeight - window.innerHeight;
             progressBar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
         }, { passive: true });
-
-        /* ====== TIME GREETING ====== */
-        const hour = new Date().getHours();
-        let greeting = 'Good evening &#x1F319;';
-        if (hour >= 5 && hour < 12) greeting = 'Good morning &#x2600;&#xFE0F;';
-        else if (hour >= 12 && hour < 17) greeting = 'Good afternoon &#x1F324;&#xFE0F;';
-        document.getElementById('heroGreeting').innerHTML = greeting;
 
         /* ====== MOBILE MENU ====== */
         const hamburger = document.getElementById('hamburger');
@@ -1760,7 +1682,7 @@
             { label: 'Go to Personal Interests', icon: '&#x2764;&#xFE0F;', action: () => { document.getElementById('interests').scrollIntoView({behavior:'smooth'}); }},
             { label: 'Go to Contact', icon: '&#x1F4E7;', action: () => { document.getElementById('contact').scrollIntoView({behavior:'smooth'}); }},
             { label: 'Download Resume', icon: '&#x1F4C4;', action: () => { window.open('/Abhishek_Gupta_CV_2026.pdf','_blank'); }},
-            { label: 'Copy Email Address', icon: '&#x1F4CB;', action: () => { navigator.clipboard.writeText('guptaabhishek@Outlook.com'); }},
+            { label: 'Copy Email Address', icon: '&#x1F4CB;', action: () => { navigator.clipboard.writeText('guptaabhishek@outlook.com'); }},
             { label: 'Open LinkedIn', icon: '&#x1F517;', action: () => { window.open('https://www.linkedin.com/in/guptaabhishekisb/','_blank'); }},
             { label: 'Open Topmate', icon: '&#x1F4C5;', action: () => { window.open('https://topmate.io/guptaabhishek','_blank'); }},
             { label: 'Toggle Dark Mode', icon: '&#x1F319;', action: () => { themeToggle.click(); }},
@@ -1794,19 +1716,6 @@
         });
         cmdInput.addEventListener('input', () => renderCommands(cmdInput.value));
         cmdOverlay.addEventListener('click', (e) => { if (e.target === cmdOverlay) closeCmdPalette(); });
-
-        /* ====== CUSTOM CURSOR ====== */
-        if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            const dot = document.getElementById('cursorDot');
-            const outline = document.getElementById('cursorOutline');
-            let mx = 0, my = 0, ox = 0, oy = 0;
-            document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
-            (function anim() { ox += (mx - ox) * 0.15; oy += (my - oy) * 0.15; outline.style.left = ox + 'px'; outline.style.top = oy + 'px'; requestAnimationFrame(anim); })();
-            document.querySelectorAll('a, button, .skill-card, .edu-card, .portfolio-card, .interest-card, .timeline-card').forEach(el => {
-                el.addEventListener('mouseenter', () => { dot.classList.add('hovering'); outline.classList.add('hovering'); });
-                el.addEventListener('mouseleave', () => { dot.classList.remove('hovering'); outline.classList.remove('hovering'); });
-            });
-        }
 
         /* ====== PARALLAX ====== */
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.innerWidth > 768) {
