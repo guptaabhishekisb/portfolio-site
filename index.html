@@ -755,6 +755,93 @@
         .portfolio-card p { font-size: 0.95rem; color: var(--text-light); line-height: 1.75; margin-bottom: 1rem; }
         .portfolio-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
+        /* Featured Case Study */
+        .featured-project {
+            background: var(--contact-bg);
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .featured-project:hover { border-color: rgba(99,102,241,0.45); }
+        .featured-badge {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-family: var(--font-body);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #a5b4fc;
+            background: rgba(99,102,241,0.15);
+            padding: 0.3rem 0.85rem;
+            border-radius: 20px;
+            border: 1px solid rgba(99,102,241,0.25);
+        }
+        .featured-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.5px;
+        }
+        .featured-tagline {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #a5b4fc;
+            margin-bottom: 1.75rem;
+        }
+        .featured-block { margin-bottom: 1.25rem; }
+        .featured-block-title {
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #94a3b8;
+            margin-bottom: 0.35rem;
+        }
+        .featured-block p {
+            font-size: 0.9rem;
+            color: rgba(241,245,249,0.75);
+            line-height: 1.75;
+        }
+        .featured-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; }
+        .featured-tags .tag {
+            background: rgba(99,102,241,0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99,102,241,0.2);
+        }
+        .featured-video-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(99,102,241,0.3);
+            box-shadow: 0 0 30px rgba(99,102,241,0.15), 0 0 60px rgba(99,102,241,0.05);
+            background: #0f172a;
+        }
+        .featured-video-wrapper video {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+        .featured-video-caption {
+            font-size: 0.78rem;
+            color: #64748b;
+            text-align: center;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
         /* ============================================
            16. INTERESTS
            ============================================ */
@@ -1076,6 +1163,15 @@
                 z-index: 998;
             }
             .nav-overlay.open { display: block; }
+
+            .featured-project {
+                grid-template-columns: 1fr;
+                padding: 1.75rem;
+                gap: 1.75rem;
+            }
+            .featured-project .featured-media { order: -1; }
+            .featured-badge { top: 0.75rem; right: 0.75rem; font-size: 0.62rem; }
+            .featured-content h3 { font-size: 1.3rem; padding-right: 6rem; }
 
             .skills-grid { grid-template-columns: 1fr; }
             .edu-grid { grid-template-columns: 1fr; }
@@ -1477,6 +1573,51 @@
     <section class="portfolio-section" id="portfolio">
         <div class="section-inner">
             <div class="section-header fade-in"><h2>Product Portfolio</h2><div class="line"></div></div>
+
+            <!-- Featured Case Study -->
+            <div class="featured-project fade-in">
+                <span class="featured-badge">Strategy &times; Tech</span>
+                <div class="featured-content">
+                    <h3>AI-Powered Activity Orchestrator</h3>
+                    <div class="featured-tagline">Increasing Cross-Sell through Contextual Itineraries</div>
+
+                    <div class="featured-block">
+                        <div class="featured-block-title">The Problem</div>
+                        <p>Travelers book flights and hotels on Expedia but turn to other platforms for activities due to the high cognitive load of manual planning &mdash; browsing dozens of options, checking proximity, and stitching together a day-wise schedule.</p>
+                    </div>
+
+                    <div class="featured-block">
+                        <div class="featured-block-title">The Solution</div>
+                        <p>An AI-driven &ldquo;1-Click Itinerary&rdquo; that uses existing trip context &mdash; hotel location, traveler type, trip dates &mdash; to suggest a proximity-optimized, day-wise schedule of activities, turning passive shoppers into active bookers.</p>
+                    </div>
+
+                    <div class="featured-block">
+                        <div class="featured-block-title">The Tech</div>
+                        <p>Built as a vibe-coded high-fidelity prototype using Lovable to demonstrate &ldquo;Contextual Commerce&rdquo; logic &mdash; proving the concept with a functional, interactive experience before any backend investment.</p>
+                    </div>
+
+                    <div class="featured-tags">
+                        <span class="tag">AI / LLM</span>
+                        <span class="tag">Contextual Commerce</span>
+                        <span class="tag">Cross-sell</span>
+                        <span class="tag">Lovable</span>
+                        <span class="tag">Vibe Coding</span>
+                        <span class="tag">Travel Tech</span>
+                    </div>
+                </div>
+
+                <div class="featured-media">
+                    <div class="featured-video-wrapper">
+                        <video controls preload="metadata" playsinline>
+                            <source src="activities-north-star.mp4" type="video/mp4">
+                            <source src="activities-north-star.mov" type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="featured-video-caption">Functional Prototype developed with Lovable AI</div>
+                </div>
+            </div>
+
             <div class="fade-in">
                 <div class="portfolio-card">
                     <h3><a href="https://www.abhishekgupta.cc" target="_blank" rel="noopener">Personal Portfolio Website</a></h3>
