@@ -454,7 +454,7 @@
            10. CURRENTLY SECTION
            ============================================ */
         .currently-section {
-            padding: 3rem 2rem 1rem;
+            padding: 2rem 2rem 1rem;
         }
         .currently-card {
             background: var(--glass-bg);
@@ -486,7 +486,7 @@
            11. IMPACT BY NUMBERS
            ============================================ */
         .impact-section {
-            padding: 3rem 2rem 4rem;
+            padding: 2rem 2rem 4rem;
         }
         .impact-row {
             display: flex;
@@ -793,9 +793,14 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            transition: border-color 0.3s ease;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
         }
-        .featured-project:hover { border-color: rgba(99,102,241,0.45); }
+        .featured-project:hover {
+            border-left-color: #6366f1;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transform: scale(1.02);
+        }
         .featured-badge {
             position: absolute;
             top: 1.25rem;
