@@ -907,6 +907,53 @@
         .interest-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
         .interest-card p { font-size: 0.92rem; color: var(--text-light); line-height: 1.75; }
 
+        .interest-card-wide {
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2.5rem;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .interest-card-wide:hover {
+            border-left-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.02);
+        }
+        .interest-card-wide h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+        .interest-card-wide p { font-size: 0.92rem; color: var(--text-light); line-height: 1.75; }
+        .interest-cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            flex-shrink: 0;
+        }
+        .interest-card-img {
+            text-align: center;
+        }
+        .interest-card-img img {
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease;
+        }
+        .interest-card-img img:hover {
+            transform: scale(1.05);
+        }
+        .interest-card-img span {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--text-light);
+            margin-top: 0.4rem;
+            font-weight: 500;
+        }
+
         /* ============================================
            17. CONTACT
            ============================================ */
@@ -1206,6 +1253,15 @@
             .skills-grid { grid-template-columns: 1fr; }
             .edu-grid { grid-template-columns: 1fr; }
             .interest-card { flex-direction: column; }
+            .interest-card-wide {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .interest-cards-stack {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .interest-card-img img { width: 160px; }
             .timeline-header { flex-direction: column; }
 
             /* Mobile timeline: left-aligned */
@@ -1665,11 +1721,23 @@
         <div class="section-inner">
             <div class="section-header fade-in"><h2>Personal Interests</h2><div class="line"></div></div>
             <div class="fade-in">
-                <div class="interest-card">
-                    <div class="interest-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+                <div class="interest-card-wide">
                     <div>
-                        <h3>Credit Card Enthusiast &amp; Points/Miles Strategist</h3>
+                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+                            <div class="interest-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+                            <h3 style="margin-bottom:0;">Credit Card Enthusiast &amp; Points/Miles Strategist</h3>
+                        </div>
                         <p>Passionate about the world of credit card rewards, airline miles, and hotel points. I love helping friends, family, and anyone willing to listen build smart points &amp; miles strategies to maximise the return on their everyday spending. Whether it's picking the right card for your spending pattern, stacking offers, or planning award travel &mdash; I'm always happy to geek out and help you get more value from every swipe. Feel free to reach out if you'd like to chat about optimising your rewards game!</p>
+                    </div>
+                    <div class="interest-cards-stack">
+                        <div class="interest-card-img">
+                            <img src="axis-magnus.jpg" alt="Axis Bank Magnus Credit Card" loading="lazy">
+                            <span>Axis Bank Magnus</span>
+                        </div>
+                        <div class="interest-card-img">
+                            <img src="amex-platinum.jpg" alt="American Express Platinum Charge Card" loading="lazy">
+                            <span>Amex Platinum</span>
+                        </div>
                     </div>
                 </div>
             </div>
