@@ -755,6 +755,31 @@
         .portfolio-card p { font-size: 0.95rem; color: var(--text-light); line-height: 1.75; margin-bottom: 1rem; }
         .portfolio-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
+        /* Portfolio card dark variant */
+        .portfolio-card-dark {
+            background: var(--contact-bg);
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .portfolio-card-dark:hover {
+            border-left-color: #6366f1;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transform: scale(1.02);
+        }
+        .portfolio-card-dark h3 { font-size: 1.15rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.35rem; }
+        .portfolio-card-dark h3 a { color: #f1f5f9; text-decoration: none; transition: color 0.2s; }
+        .portfolio-card-dark h3 a:hover { color: #a5b4fc; }
+        .portfolio-card-dark .portfolio-url a { color: #a5b4fc; }
+        .portfolio-card-dark p { font-size: 0.95rem; color: rgba(241,245,249,0.7); line-height: 1.75; margin-bottom: 1rem; }
+        .portfolio-card-dark .tag {
+            background: rgba(99,102,241,0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99,102,241,0.2);
+        }
+
         /* Featured Case Study */
         .featured-project {
             background: var(--contact-bg);
@@ -765,7 +790,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
-            align-items: start;
+            align-items: center;
             position: relative;
             overflow: hidden;
             transition: border-color 0.3s ease;
@@ -1619,7 +1644,7 @@
             </div>
 
             <div class="fade-in">
-                <div class="portfolio-card">
+                <div class="portfolio-card-dark">
                     <h3><a href="https://www.abhishekgupta.cc" target="_blank" rel="noopener">Personal Portfolio Website</a></h3>
                     <div class="portfolio-url"><a href="https://www.abhishekgupta.cc" target="_blank" rel="noopener">www.abhishekgupta.cc</a></div>
                     <p>A modern, responsive personal portfolio website showcasing professional experience, skills, and interests. Built entirely using Claude Code (Anthropic's AI-powered coding tool) for rapid development, version-controlled on GitHub, and deployed via Vercel for seamless CI/CD. Demonstrates the power of AI-assisted development for quick prototyping and shipping production-quality web applications.</p>
@@ -1630,7 +1655,7 @@
                         <span class="tag">Vercel</span>
                         <span class="tag">AI-Assisted Development</span>
                     </div>
-                </div>
+                </div><!-- .portfolio-card-dark -->
             </div>
         </div>
     </section>
