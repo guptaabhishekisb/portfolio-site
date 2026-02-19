@@ -2164,9 +2164,6 @@
         window.addEventListener('scroll', () => {
             const y = window.scrollY;
             navbar.classList.toggle('scrolled', y > 10);
-            if (y > lastScroll && y > 80) navbar.classList.add('nav-hidden');
-            else navbar.classList.remove('nav-hidden');
-            lastScroll = y;
         }, { passive: true });
 
         /* ====== SCROLL PROGRESS ====== */
