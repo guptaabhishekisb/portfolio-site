@@ -762,7 +762,9 @@
         .portfolio-url a { color: var(--accent); text-decoration: none; font-weight: 500; }
         .portfolio-url a:hover { text-decoration: underline; }
         .portfolio-card p { font-size: 0.95rem; color: var(--text-light); line-height: 1.75; margin-bottom: 1rem; }
-        .portfolio-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .portfolio-tags { display: flex; flex-wrap: nowrap; gap: 0.5rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+        .portfolio-tags::-webkit-scrollbar { display: none; }
+        .portfolio-tags .tag { white-space: nowrap; flex-shrink: 0; }
 
         /* Portfolio card dark variant */
         .portfolio-card-dark {
@@ -879,6 +881,89 @@
             text-align: center;
             margin-top: 0.75rem;
             font-style: italic;
+        }
+
+        /* MacBook Frame for Video */
+        .macbook-frame {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .macbook-screen {
+            background: #0f172a;
+            border-radius: 12px 12px 0 0;
+            border: 3px solid #333;
+            border-bottom: none;
+            padding: 8px 8px 0;
+            position: relative;
+        }
+        .macbook-screen::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: #444;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .macbook-screen video {
+            width: 100%;
+            display: block;
+            border-radius: 6px 6px 0 0;
+        }
+        .macbook-base {
+            background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+            height: 18px;
+            border-radius: 0 0 4px 4px;
+            position: relative;
+            border: 2px solid #333;
+            border-top: 1px solid #444;
+        }
+        .macbook-base::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #3a3a3a;
+            border-radius: 0 0 4px 4px;
+        }
+        .macbook-base::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110%;
+            height: 6px;
+            background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+            border-radius: 0 0 8px 8px;
+            border: 2px solid #333;
+            border-top: none;
+        }
+
+        /* Tags spanning full width below both columns */
+        .featured-tags-full {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.4rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .featured-tags-full::-webkit-scrollbar { display: none; }
+        .featured-tags-full .tag {
+            background: rgba(99,102,241,0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99,102,241,0.2);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         /* Ancillary card: wider content column for portrait phone video */
@@ -1394,6 +1479,7 @@
             .featured-project .featured-media { order: -1; }
             .featured-project--phone { grid-template-columns: 1fr; }
             .iphone-frame { width: 220px; }
+            .macbook-base::after { width: 105%; }
             .featured-badge { top: 0.75rem; right: 0.75rem; font-size: 0.62rem; }
             .featured-content h3 { font-size: 1.3rem; padding-right: 8rem; }
 
@@ -1845,14 +1931,6 @@
                         </div>
                     </div>
 
-                    <div class="featured-tags">
-                        <span class="tag">Ancillary Revenue</span>
-                        <span class="tag">Marketplace</span>
-                        <span class="tag">Seats &amp; Bags</span>
-                        <span class="tag">Travel Tech</span>
-                        <span class="tag">Growth Strategy</span>
-                        <span class="tag">Expedia Group</span>
-                    </div>
                 </div>
 
                 <div class="featured-media">
@@ -1866,10 +1944,19 @@
                     </div>
                     <div class="featured-video-caption">Expedia Flights Merchandising &mdash; Demo Walkthrough</div>
                 </div>
+
+                <div class="featured-tags-full">
+                    <span class="tag">Ancillary Revenue</span>
+                    <span class="tag">Marketplace</span>
+                    <span class="tag">Seats &amp; Bags</span>
+                    <span class="tag">Travel Tech</span>
+                    <span class="tag">Growth Strategy</span>
+                    <span class="tag">Expedia Group</span>
+                </div>
             </div>
 
             <!-- Featured Case Study: AI-Powered Activity Orchestrator -->
-            <div class="featured-project fade-in">
+            <div class="featured-project fade-in" style="align-items: center;">
                 <span class="featured-badge">Strategy &times; Tech</span>
                 <div class="featured-content">
                     <h3>AI-Powered Activity Orchestrator</h3>
@@ -1889,26 +1976,29 @@
                         <div class="featured-block-title">The Tech</div>
                         <p>Built as a vibe-coded high-fidelity prototype using Lovable to demonstrate &ldquo;Contextual Commerce&rdquo; logic &mdash; proving the concept with a functional, interactive experience before any backend investment.</p>
                     </div>
-
-                    <div class="featured-tags">
-                        <span class="tag">AI / LLM</span>
-                        <span class="tag">Contextual Commerce</span>
-                        <span class="tag">Cross-sell</span>
-                        <span class="tag">Lovable</span>
-                        <span class="tag">Vibe Coding</span>
-                        <span class="tag">Travel Tech</span>
-                    </div>
                 </div>
 
                 <div class="featured-media">
-                    <div class="featured-video-wrapper">
-                        <video controls preload="metadata" playsinline>
-                            <source src="activities-north-star.mp4" type="video/mp4">
-                            <source src="activities-north-star.mov" type="video/quicktime">
-                            Your browser does not support the video tag.
-                        </video>
+                    <div class="macbook-frame">
+                        <div class="macbook-screen">
+                            <video controls preload="metadata" playsinline>
+                                <source src="activities-north-star.mp4" type="video/mp4">
+                                <source src="activities-north-star.mov" type="video/quicktime">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="macbook-base"></div>
                     </div>
                     <div class="featured-video-caption">Functional Prototype developed with Lovable AI</div>
+                </div>
+
+                <div class="featured-tags-full">
+                    <span class="tag">AI / LLM</span>
+                    <span class="tag">Contextual Commerce</span>
+                    <span class="tag">Cross-sell</span>
+                    <span class="tag">Lovable</span>
+                    <span class="tag">Vibe Coding</span>
+                    <span class="tag">Travel Tech</span>
                 </div>
             </div>
 
