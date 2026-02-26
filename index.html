@@ -1746,11 +1746,14 @@
             .bento-grid {
                 grid-template-columns: 1fr;
                 grid-template-areas: "c1" "c2" "c3" "c4";
+                gap: 1.5rem;
             }
             .bento-c1 > .featured-project,
             .bento-c2 > .featured-project,
             .bento-c3 > .portfolio-card-dark,
             .bento-c4 > .portfolio-card-dark { height: auto; }
+            /* Restore correct iphone-frame size on mobile (overrides bento desktop rule) */
+            .bento-c1 .iphone-frame { width: 220px; }
 
             .contact-ctas { flex-direction: column; }
             .contact-ctas a { text-align: center; justify-content: center; }
