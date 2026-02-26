@@ -1773,13 +1773,13 @@
         <div class="nav-inner">
             <div class="nav-logo">AG</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about" class="active">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#interests">Interests</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="active" onclick="gtag('event','nav_click',{'section':'About'});">About</a></li>
+                <li><a href="#experience" onclick="gtag('event','nav_click',{'section':'Experience'});">Experience</a></li>
+                <li><a href="#skills" onclick="gtag('event','nav_click',{'section':'Skills'});">Skills</a></li>
+                <li><a href="#portfolio" onclick="gtag('event','nav_click',{'section':'Portfolio'});">Portfolio</a></li>
+                <li><a href="#education" onclick="gtag('event','nav_click',{'section':'Education'});">Education</a></li>
+                <li><a href="#interests" onclick="gtag('event','nav_click',{'section':'Interests'});">Interests</a></li>
+                <li><a href="#contact" onclick="gtag('event','nav_click',{'section':'Contact'});">Contact</a></li>
                 <li class="nav-cta-mobile"><a href="https://topmate.io/guptaabhishek" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.95rem;padding:0.6rem 1.25rem;" onclick="gtag('event','cta_click',{'cta_name':'Book a Session','cta_location':'navbar_mobile'});">Book a Session</a></li>
             </ul>
             <div class="nav-right">
@@ -1787,7 +1787,7 @@
                     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Book a Session
                 </a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="gtag('event','theme_toggle',{'theme_switched_to': document.documentElement.getAttribute('data-theme')==='dark' ? 'light' : 'dark'});">
                     <svg class="moon-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
                     <svg class="sun-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                 </button>
