@@ -873,8 +873,32 @@
             border: 1px solid rgba(99,102,241,0.2);
         }
 
-        /* Portfolio grid — equal spacing between all cards */
-        .portfolio-grid { display: flex; flex-direction: column; gap: 2rem; }
+        /* ── Bento Grid ─────────────────────────────────────── */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "c1 c1 c3"
+                "c4 c2 c2";
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+        .bento-c1 { grid-area: c1; }
+        .bento-c2 { grid-area: c2; }
+        .bento-c3 { grid-area: c3; }
+        .bento-c4 { grid-area: c4; }
+
+        /* Cards fill their bento cell height */
+        .bento-c1 > .featured-project,
+        .bento-c2 > .featured-project,
+        .bento-c3 > .portfolio-card-dark,
+        .bento-c4 > .portfolio-card-dark {
+            height: 100%;
+            box-sizing: border-box;
+        }
+        /* iPhone frame: cap at 100% of its media column in bento context */
+        .bento-c1 .iphone-frame { width: min(260px, 100%); }
 
         /* Agent Pipeline Visualization */
         .agent-pipeline {
@@ -1718,6 +1742,16 @@
                 scroll-snap-align: start;
             }
 
+            /* Bento grid: single column on mobile */
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-areas: "c1" "c2" "c3" "c4";
+            }
+            .bento-c1 > .featured-project,
+            .bento-c2 > .featured-project,
+            .bento-c3 > .portfolio-card-dark,
+            .bento-c4 > .portfolio-card-dark { height: auto; }
+
             .contact-ctas { flex-direction: column; }
             .contact-ctas a { text-align: center; justify-content: center; }
 
@@ -2082,10 +2116,11 @@
         <div class="section-inner">
             <div class="section-header fade-in"><h2>Product Portfolio</h2><div class="line"></div></div>
 
-            <div class="portfolio-grid">
+            <div class="bento-grid">
 
-            <!-- Featured Case Study: Flight Ancillary Merchandising -->
-            <div class="featured-project featured-project--phone fade-in">
+            <!-- c1: Flight Ancillary Merchandising (top-left, large) -->
+            <div class="bento-c1 fade-in">
+            <div class="featured-project featured-project--phone">
                 <span class="featured-badge">User Experience &times; Revenue Strategy</span>
                 <div class="featured-content">
                     <h3>Flight Ancillary Merchandising: The $100B Growth Engine</h3>
@@ -2147,9 +2182,11 @@
                     <span class="tag">Expedia Group</span>
                 </div>
             </div>
+            </div><!-- .bento-c1 -->
 
-            <!-- Featured Case Study: AI-Powered Activity Orchestrator -->
-            <div class="featured-project fade-in" style="align-items: center;">
+            <!-- c2: AI-Powered Activity Orchestrator (bottom-right, large) -->
+            <div class="bento-c2 fade-in">
+            <div class="featured-project" style="align-items: center;">
                 <span class="featured-badge">Strategy &times; Tech</span>
                 <div class="featured-content">
                     <h3>AI-Powered Activity Orchestrator</h3>
@@ -2193,8 +2230,10 @@
                     <span class="tag">Travel Tech</span>
                 </div>
             </div>
+            </div><!-- .bento-c2 -->
 
-            <div class="fade-in">
+            <!-- c3: LinkedIn PM Job Agent (top-right, small) -->
+            <div class="bento-c3 fade-in">
                 <div class="portfolio-card-dark">
                     <h3><a href="https://github.com/guptaabhishekisb/linkedin-job-agent" target="_blank" rel="noopener">LinkedIn PM Job Agent</a></h3>
                     <div class="portfolio-url"><a href="https://github.com/guptaabhishekisb/linkedin-job-agent" target="_blank" rel="noopener">github.com/guptaabhishekisb/linkedin-job-agent</a></div>
@@ -2236,9 +2275,10 @@
                         <span class="tag">Open Source</span>
                     </div>
                 </div><!-- .portfolio-card-dark -->
-            </div>
+            </div><!-- .bento-c3 -->
 
-            <div class="fade-in">
+            <!-- c4: Personal Portfolio Website (bottom-left, small) -->
+            <div class="bento-c4 fade-in">
                 <div class="portfolio-card-dark">
                     <h3><a href="https://www.abhishekgupta.cc" target="_blank" rel="noopener">Personal Portfolio Website</a></h3>
                     <div class="portfolio-url"><a href="https://www.abhishekgupta.cc" target="_blank" rel="noopener">www.abhishekgupta.cc</a></div>
@@ -2251,9 +2291,9 @@
                         <span class="tag">AI-Assisted Development</span>
                     </div>
                 </div><!-- .portfolio-card-dark -->
-            </div>
+            </div><!-- .bento-c4 -->
 
-            </div><!-- .portfolio-grid -->
+            </div><!-- .bento-grid -->
         </div>
     </section>
 
