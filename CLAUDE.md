@@ -4,24 +4,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static portfolio/resume website for Abhishek Gupta, Director of Product at Expedia Group. The entire site is a single-file HTML document with embedded CSS and JavaScript.
+This is a static portfolio/resume website for Abhishek Gupta, former Sr. Manager of Product at Expedia Group (Apr 2017 – Feb 2026). The entire site is a single-file HTML document with embedded CSS and JavaScript.
 
 ## Running the Site
 
-Open `resume.html` directly in a web browser:
+Open `index.html` directly in a web browser:
 ```bash
-open resume.html
+open index.html
 ```
 
 Or serve it locally with a simple HTTP server:
 ```bash
 python3 -m http.server 8000
-# Then visit http://localhost:8000/resume.html
+# Then visit http://localhost:8000/
 ```
 
 ## Architecture
 
-**Single-file architecture**: All HTML structure, CSS styling, and JavaScript functionality are embedded in `resume.html` (1,283 lines).
+**Single-file architecture**: All HTML structure, CSS styling, and JavaScript functionality are embedded in `index.html`.
 
 **Key sections** (in order):
 - Navigation (fixed header with responsive hamburger menu)
@@ -60,4 +60,4 @@ When editing the site:
 
 The site links to:
 - LinkedIn: `https://www.linkedin.com/in/guptaabhishekisb/`
-- Contact email: `abhishek@example.com` (placeholder)
+- Contact email: `guptaabhishek@outlook.com`
